@@ -1,0 +1,29 @@
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    aerospace
+    bash
+    bat
+    btop
+    eza
+    fd
+    ghostscript
+	gh
+    imagemagick
+    jankyborders
+    jdk
+    jq
+    lazygit
+    lua5_4
+    luarocks
+    mas
+    opencode
+    python314
+    ripgrep
+    sbarlua
+    sketchybar
+    sketchybar-app-font
+    stow
+    syncthing
+  ];
+}

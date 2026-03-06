@@ -1,0 +1,17 @@
+{ ... }:
+{
+  imports = [
+    ./git.nix
+    ./fish.nix
+    ./fzf.nix
+    ./ghostty.nix
+    ./aerospace.nix
+    ./sketchybar.nix
+    ./starship.nix
+    ./zoxide.nix
+    ./tmux.nix
+    ./neovim.nix
+    ./syncthing.nix
+    ./packages.nix
+  ];
+}
