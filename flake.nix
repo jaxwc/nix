@@ -9,25 +9,27 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nix-darwin, home-manager, ... }:
-  let
+  outputs = {
+    nix-darwin,
+    home-manager,
+    ...
+  }: let
     user = "jackson";
     hostname = "jacksons-MacBook-Pro";
-  in
-  {
+  in {
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
-      specialArgs = { inherit user hostname; };
+      specialArgs = {inherit user hostname;};
 
       modules = [
         ./modules/darwin
-        
+
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit user; };
+          home-manager.extraSpecialArgs = {inherit user;};
           home-manager.users.${user} = import ./home;
-		  home-manager.backupFileExtension = "backup";
+          home-manager.backupFileExtension = "backup";
         }
       ];
     };

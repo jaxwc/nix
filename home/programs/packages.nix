@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     aerospace
+	alejandra
     bash
     bat
     btop
@@ -17,6 +18,7 @@
     lua5_4
     luarocks
     mas
+	nixd
     opencode
     python314
     ripgrep

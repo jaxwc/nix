@@ -15,5 +15,10 @@ return {
     vim.lsp.config("*", {
       capabilities = capabilities,
     })
+
+    vim.lsp.config("nixd", {
+      capabilities = capabilities,
+    })
+    vim.lsp.enable("nixd")
   end,
 }
