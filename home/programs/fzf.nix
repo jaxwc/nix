@@ -8,8 +8,8 @@
 
     colors = {
       "bg+" = theme.colors.bg2;
-      bg = theme.colors.bg1;
-      gutter = theme.colors.bg1;
+      bg = "-1";
+      gutter = "-1";
       spinner = theme.colors.orange;
       hl = theme.colors.blue;
       fg = theme.colors.text;
@@ -20,6 +20,7 @@
       "fg+" = theme.colors.text;
       prompt = theme.colors.blue;
       "hl+" = theme.colors.cyan;
+      "selected-bg" = theme.colors.bg2;
     };
 
     defaultOptions = [
