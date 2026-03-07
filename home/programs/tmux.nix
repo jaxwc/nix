@@ -1,4 +1,6 @@
-{ pkgs, ... }:
+{pkgs, theme, ...}: let
+  c = theme.colors;
+in
 {
   programs.tmux = {
     enable = true;
@@ -48,19 +50,19 @@
       bind-key l select-pane -R
 
       # Flexoki Dark Theme
-      set -g @bg "#100F0F"
-      set -g @fg "#CECDC3"
-      set -g @bg_subtle "#1C1B1A"
-      set -g @ui_muted "#575653"
-      set -g @red "#D14D41"
-      set -g @orange "#DA702C"
-      set -g @yellow "#D0A215"
-      set -g @green "#879A39"
-      set -g @cyan "#3AA99F"
-      set -g @blue "#4385BE"
-      set -g @purple "#8B7EC8"
-      set -g @magenta "#CE5D97"
-      set -g @transparent "#00000000"
+      set -g @bg "${c.black}"
+      set -g @fg "${c.text}"
+      set -g @bg_subtle "${c.bg1}"
+      set -g @ui_muted "${c.uiMuted}"
+      set -g @red "${c.red}"
+      set -g @orange "${c.orange}"
+      set -g @yellow "${c.yellow}"
+      set -g @green "${c.green}"
+      set -g @cyan "${c.cyan}"
+      set -g @blue "${c.blue}"
+      set -g @purple "${c.purple}"
+      set -g @magenta "${c.magenta}"
+      set -g @transparent "${c.transparent}"
 
       set -g status-left-length 100
       set -g status-left ""

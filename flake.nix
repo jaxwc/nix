@@ -17,8 +17,7 @@
   }: let
     user = "jackson";
     hostname = "Jacksons-MacBook-Pro";
-    lib = nixpkgs.lib;
-    theme = import ./lib/theme.nix {inherit lib;};
+    theme = import ./lib/theme.nix {};
   in {
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit user hostname theme;};

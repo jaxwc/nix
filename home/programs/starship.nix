@@ -1,5 +1,6 @@
-{ ... }:
-{
+{theme, ...}: let
+  c = theme.colors;
+in {
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
@@ -15,35 +16,35 @@
       palette = "flexoki";
 
       palettes.flexoki = {
-        base = "#100f0f";
-        mantle = "#1c1b1a";
-        crust = "#282726";
-        text = "#cecdc3";
-        subtext1 = "#b7b5ac";
-        subtext0 = "#878580";
-        muted = "#575653";
-        red = "#d14d41";
-        orange = "#da702c";
-        yellow = "#d0a215";
-        green = "#879a39";
-        cyan = "#3aa99f";
-        blue = "#4385be";
-        purple = "#8b7ec8";
-        magenta = "#ce5d97";
-        sapphire = "#4385be";
-        lavender = "#8b7ec8";
-        peach = "#da702c";
-        teal = "#3aa99f";
-        pine = "#24837b";
-        maroon = "#d14d41";
-        pink = "#ce5d97";
-        flamingo = "#ce5d97";
-        rosewater = "#cecdc3";
-        gold = "#d0a215";
-        rose = "#d14d41";
-        sky = "#4385be";
-        foam = "#3aa99f";
-        black = "#100f0f";
+        base = c.black;
+        mantle = c.bg1;
+        crust = c.bg2;
+        text = c.text;
+        subtext1 = c.subtext1;
+        subtext0 = c.muted;
+        muted = c.uiMuted;
+        red = c.red;
+        orange = c.orange;
+        yellow = c.yellow;
+        green = c.green;
+        cyan = c.cyan;
+        blue = c.blue;
+        purple = c.purple;
+        magenta = c.magenta;
+        sapphire = c.blue;
+        lavender = c.purple;
+        peach = c.orange;
+        teal = c.cyan;
+        pine = c.pine;
+        maroon = c.red;
+        pink = c.magenta;
+        flamingo = c.magenta;
+        rosewater = c.text;
+        gold = c.yellow;
+        rose = c.red;
+        sky = c.blue;
+        foam = c.cyan;
+        black = c.black;
       };
 
       os.symbols = {
