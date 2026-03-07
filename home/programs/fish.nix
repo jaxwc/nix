@@ -59,6 +59,28 @@
          set -gx THEME_GREEN "${theme.colors.green}"
          set -gx THEME_RED "${theme.colors.red}"
 
+      # Fish syntax highlighting
+         set -g fish_color_normal ${theme.colors.text}
+         set -g fish_color_command ${theme.colors.blue}
+         set -g fish_color_keyword ${theme.colors.purple}
+         set -g fish_color_quote ${theme.colors.green}
+         set -g fish_color_redirection ${theme.colors.cyan}
+         set -g fish_color_end ${theme.colors.orange}
+         set -g fish_color_error ${theme.colors.red}
+         set -g fish_color_param ${theme.colors.text}
+         set -g fish_color_comment ${theme.colors.muted}
+         set -g fish_color_selection --background=${theme.colors.bg2}
+         set -g fish_color_search_match --background=${theme.colors.bg2}
+         set -g fish_color_operator ${theme.colors.cyan}
+         set -g fish_color_escape ${theme.colors.yellow}
+         set -g fish_color_autosuggestion ${theme.colors.muted}
+         set -g fish_color_valid_path --underline
+         set -g fish_color_cwd ${theme.colors.green}
+         set -g fish_color_cwd_root ${theme.colors.red}
+         set -g fish_color_user ${theme.colors.blue}
+         set -g fish_color_host ${theme.colors.cyan}
+         set -g fish_color_host_remote ${theme.colors.orange}
+
          set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
          set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
          set -gx FZF_DEFAULT_OPTS '--color=bg+:${theme.colors.bg2},bg:${theme.colors.bg1},gutter:${theme.colors.bg1},spinner:${theme.colors.orange},hl:${theme.colors.blue},fg:${theme.colors.text},header:${theme.colors.green},info:${theme.colors.cyan},pointer:${theme.colors.blue},marker:${theme.colors.green},fg+:${theme.colors.text},prompt:${theme.colors.blue},hl+:${theme.colors.cyan} --prompt="❯ " --pointer="❯" --layout=reverse --border --height=40%'
