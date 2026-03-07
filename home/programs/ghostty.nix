@@ -9,7 +9,6 @@
       theme = ${theme.ghosttyTheme}
       background-opacity = 0.70
       background-blur = true
-      background = ${theme.colors.black}
 
       window-padding-x = 8
       window-padding-y = 8
