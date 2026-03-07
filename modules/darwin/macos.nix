@@ -44,8 +44,6 @@
       };
       "com.apple.WindowManager" = {
         StandardHideWidgets = 1;
-      };
-      "com.apple.WindowManager" = {
         GloballyEnabled = false;
       };
     };
