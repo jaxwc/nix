@@ -12,13 +12,16 @@
   outputs = {
     nix-darwin,
     home-manager,
+    nixpkgs,
     ...
   }: let
     user = "jackson";
     hostname = "Jacksons-MacBook-Pro";
+    lib = nixpkgs.lib;
+    theme = import ./lib/theme.nix {inherit lib;};
   in {
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
-      specialArgs = {inherit user hostname;};
+      specialArgs = {inherit user hostname theme;};
 
       modules = [
         ./modules/darwin
@@ -27,7 +30,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit user;};
+          home-manager.extraSpecialArgs = {inherit user theme;};
           home-manager.users.${user} = import ./home;
           home-manager.backupFileExtension = "backup";
         }
