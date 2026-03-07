@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./core.nix
-    /theme
+    ./theme
     ./programs
   ];
 }
