@@ -1,8 +1,7 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./settings.nix
-    ./apple-settings.nix
+    ./macos.nix
     ./homebrew.nix
   ];
 }

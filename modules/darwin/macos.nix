@@ -42,6 +42,12 @@
           "184" = {enabled = 0;};
         };
       };
+      "com.apple.WindowManager" = {
+        StandardHideWidgets = 1;
+      };
+      "com.apple.WindowManager" = {
+        GloballyEnabled = false;
+      };
     };
   };
 }
