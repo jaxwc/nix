@@ -15,7 +15,7 @@
     ...
   }: let
     user = "jackson";
-    hostname = "jacksons-MacBook-Pro";
+    hostname = "Jacksons-MacBook-Pro";
   in {
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit user hostname;};

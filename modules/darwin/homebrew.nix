@@ -5,7 +5,7 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     onActivation.cleanup = "zap";
-    taps = [ "epk/epk" ];
+    taps = [ ];
     brews = [ ];
     casks = [
       "1password@beta"
@@ -13,7 +13,6 @@
       "fantastical"
       "font-hack-nerd-font"
       "font-jetbrains-mono-nerd-font"
-      "font-sf-mono-nerd-font"
       "font-sf-pro"
       "ghostty"
       "jellyfin-media-player"

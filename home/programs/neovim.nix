@@ -1,5 +1,4 @@
-{ ... }:
-{
+{config, ...}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -8,7 +7,7 @@
   };
 
   xdg.configFile."nvim" = {
-    source = ../config/nvim;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/home/config/nvim";
     recursive = true;
   };
 }

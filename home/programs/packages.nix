@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     aerospace
 	alejandra
@@ -9,7 +8,7 @@
     eza
     fd
     ghostscript
-	gh
+    gh
     imagemagick
     jankyborders
     jdk
@@ -17,8 +16,9 @@
     lazygit
     lua5_4
     luarocks
-    mas
+	mas
 	nixd
+	nodejs_22
     opencode
     python314
     ripgrep
