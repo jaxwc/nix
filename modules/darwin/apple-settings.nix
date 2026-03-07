@@ -8,6 +8,7 @@
       NSAutomaticCapitalizationEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
       ApplePressAndHoldEnabled = false;
+      _HIHideMenuBar = true;
     };
 
     finder = {
