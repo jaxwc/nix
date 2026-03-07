@@ -14,7 +14,7 @@
       AppleShowAllFiles = true;
       ShowPathbar = true;
       ShowStatusBar = true;
-      FXPreferedViewStyle = "Nlsv";
+      FXPreferredViewStyle = "Nlsv";
       _FXSortFoldersFirst = true;
       FXEnableExtensionChangeWarning = false;
     };
