@@ -30,6 +30,11 @@
       Clicking = true;
     };
 
+    screensave = {
+      askForPassword = true;
+      askForPasswordDelay = 0;
+    };
+
     CustomUserPreferences = {
       "com.apple.symbolichotkeys" = {
         AppleSymbolicHotKeys = {
