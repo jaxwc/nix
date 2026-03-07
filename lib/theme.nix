@@ -1,7 +1,6 @@
 {}: {
   name = "flexoki-dark";
   ghosttyTheme = "Flexoki Dark";
-  nvimVariant = "moon";
 
   rawHexValue = color: builtins.substring 1 6 color;
 
