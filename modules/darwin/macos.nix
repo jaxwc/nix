@@ -30,7 +30,7 @@
       Clicking = true;
     };
 
-    screensave = {
+    screensaver = {
       askForPassword = true;
       askForPasswordDelay = 0;
     };
