@@ -1,6 +1,7 @@
 {
   pkgs,
   user,
+  theme,
   ...
 }: {
   programs.fish = {
@@ -49,9 +50,49 @@
                set -gx JAVA_HOME "${pkgs.jdk}/lib/openjdk"
                fish_add_path $JAVA_HOME/bin
 
+               set -gx THEME_BG "${theme.colors.black}"
+               set -gx THEME_FG "${theme.colors.text}"
+               set -gx THEME_MUTED "${theme.colors.muted}"
+               set -gx THEME_BLUE "${theme.colors.blue}"
+               set -gx THEME_GREEN "${theme.colors.green}"
+               set -gx THEME_RED "${theme.colors.red}"
+
+               set -l foreground ${theme.rawHexValue theme.colors.text}
+               set -l selection ${theme.rawHexValue theme.colors.bg2}
+               set -l comment ${theme.rawHexValue theme.colors.muted}
+               set -l red ${theme.rawHexValue theme.colors.red}
+               set -l orange ${theme.rawHexValue theme.colors.orange}
+               set -l yellow ${theme.rawHexValue theme.colors.yellow}
+               set -l green ${theme.rawHexValue theme.colors.green}
+               set -l purple ${theme.rawHexValue theme.colors.purple}
+               set -l cyan ${theme.rawHexValue theme.colors.cyan}
+               set -l blue ${theme.rawHexValue theme.colors.blue}
+
+               set -g fish_color_normal $foreground
+               set -g fish_color_command $green
+               set -g fish_color_keyword $purple
+               set -g fish_color_quote $yellow
+               set -g fish_color_redirection $foreground
+               set -g fish_color_end $orange
+               set -g fish_color_option $purple
+               set -g fish_color_error $red
+               set -g fish_color_param $blue
+               set -g fish_color_comment $comment
+               set -g fish_color_selection --background=$selection
+               set -g fish_color_search_match --background=$selection
+               set -g fish_color_operator $cyan
+               set -g fish_color_escape $yellow
+               set -g fish_color_autosuggestion $comment
+
+               set -g fish_pager_color_progress $comment
+               set -g fish_pager_color_prefix $cyan
+               set -g fish_pager_color_completion $foreground
+               set -g fish_pager_color_description $comment
+               set -g fish_pager_color_selected_background --background=$selection
+
                set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
                set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-      set -gx FZF_DEFAULT_OPTS '--color=bg+:#283457,bg:-1,gutter:-1,spinner:#ff9e64,hl:#7ad5ff,fg:#c0caf5,header:#9ece6a,info:#0db9d7,pointer:#7aa2f7,marker:#9ece6a,fg+:#c0caf5,prompt:#7aa2f7,hl+:#7ad5ff --prompt="❯ " --pointer="❯" --layout=reverse --border --height=40%'
+               set -gx FZF_DEFAULT_OPTS '--color=bg+:${theme.colors.bg2},bg:${theme.colors.bg1},gutter:${theme.colors.bg1},spinner:${theme.colors.orange},hl:${theme.colors.blue},fg:${theme.colors.text},header:${theme.colors.green},info:${theme.colors.cyan},pointer:${theme.colors.blue},marker:${theme.colors.green},fg+:${theme.colors.text},prompt:${theme.colors.blue},hl+:${theme.colors.cyan} --prompt="❯ " --pointer="❯" --layout=reverse --border --height=40%'
                set -gx FZF_CTRL_T_OPTS "--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
     '';
