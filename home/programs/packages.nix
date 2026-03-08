@@ -3,8 +3,6 @@
     aerospace
 	alejandra
     bash
-    bat
-    btop
     eza
     fd
     ghostscript

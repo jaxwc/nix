@@ -4,6 +4,8 @@
     ./git.nix
     ./fish.nix
     ./fzf.nix
+    ./bat.nix
+    ./btop.nix
     ./ghostty.nix
     ./aerospace.nix
     ./sketchybar.nix
