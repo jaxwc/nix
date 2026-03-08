@@ -12,7 +12,6 @@
   outputs = {
     nix-darwin,
     home-manager,
-    nixpkgs,
     ...
   }: let
     user = "jackson";
