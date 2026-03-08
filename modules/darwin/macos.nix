@@ -7,6 +7,7 @@
       AppleShowAllExtensions = true;
       NSAutomaticCapitalizationEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
+      NSAutomaticPeriodSubstitutionEnabled = false;
       ApplePressAndHoldEnabled = false;
       _HIHideMenuBar = true;
     };
