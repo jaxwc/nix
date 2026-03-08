@@ -31,11 +31,6 @@
       Clicking = true;
     };
 
-    screensaver = {
-      askForPassword = true;
-      askForPasswordDelay = 0;
-    };
-
     CustomUserPreferences = {
       "com.apple.symbolichotkeys" = {
         AppleSymbolicHotKeys = {
