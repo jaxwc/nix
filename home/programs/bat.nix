@@ -1,314 +1,292 @@
-{pkgs, theme, ...}: let
+{theme, ...}: let
   c = theme.colors;
-
-  flexokiDarkTmTheme = pkgs.writeText "bat-flexoki-dark.tmTheme" ''
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-    <dict>
-      <key>name</key>
-      <string>flexoki-dark</string>
-      <key>settings</key>
-      <array>
-        <dict>
-          <key>settings</key>
-          <dict>
-            <key>background</key>
-            <string>${c.black}</string>
-            <key>foreground</key>
-            <string>${c.text}</string>
-            <key>caret</key>
-            <string>${c.text}</string>
-            <key>selection</key>
-            <string>${c.bg2}</string>
-            <key>lineHighlight</key>
-            <string>${c.bg1}</string>
-            <key>invisibles</key>
-            <string>${c.uiMuted}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Comment</string>
-          <key>scope</key>
-          <string>comment, punctuation.definition.comment</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.muted}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Keyword</string>
-          <key>scope</key>
-          <string>keyword, keyword.control, keyword.operator.word</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.purple}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Storage</string>
-          <key>scope</key>
-          <string>storage, storage.type, storage.modifier</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.purple}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Type</string>
-          <key>scope</key>
-          <string>entity.name.type, entity.name.class, support.type, support.class</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.yellow}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Function</string>
-          <key>scope</key>
-          <string>entity.name.function, support.function, meta.function-call, variable.function</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.blue}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Function Parameter</string>
-          <key>scope</key>
-          <string>variable.parameter</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.text}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Variable</string>
-          <key>scope</key>
-          <string>variable, support.variable</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.text}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Constant</string>
-          <key>scope</key>
-          <string>constant, constant.language, constant.character, support.constant</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.cyan}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>String</string>
-          <key>scope</key>
-          <string>string, string.quoted, string.template</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.green}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Escape</string>
-          <key>scope</key>
-          <string>constant.character.escape, string.regexp, string.other.regex</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.cyan}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Number and Boolean</string>
-          <key>scope</key>
-          <string>constant.numeric, constant.language.boolean</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.orange}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Operators</string>
-          <key>scope</key>
-          <string>keyword.operator, punctuation.separator, punctuation.terminator</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.subtext1}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Punctuation</string>
-          <key>scope</key>
-          <string>punctuation.definition, meta.brace, meta.delimiter</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.subtext1}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Tag</string>
-          <key>scope</key>
-          <string>entity.name.tag, meta.tag, support.class.component</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.blue}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Attribute</string>
-          <key>scope</key>
-          <string>entity.other.attribute-name</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.cyan}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Markdown Headings</string>
-          <key>scope</key>
-          <string>markup.heading, punctuation.definition.heading</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.blue}</string>
-            <key>fontStyle</key>
-            <string>bold</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Markdown Emphasis</string>
-          <key>scope</key>
-          <string>markup.bold, markup.italic</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.text}</string>
-            <key>fontStyle</key>
-            <string>bold</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Markdown Code</string>
-          <key>scope</key>
-          <string>markup.inline.raw, markup.fenced_code, markup.raw</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.green}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Diff Added</string>
-          <key>scope</key>
-          <string>markup.inserted, meta.diff.header.from-file</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.green}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Diff Changed</string>
-          <key>scope</key>
-          <string>markup.changed</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.yellow}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Diff Removed</string>
-          <key>scope</key>
-          <string>markup.deleted, meta.diff.header.to-file</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.red}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Link</string>
-          <key>scope</key>
-          <string>markup.underline.link, string.other.link</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.cyan}</string>
-            <key>fontStyle</key>
-            <string>underline</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Invalid</string>
-          <key>scope</key>
-          <string>invalid</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.black}</string>
-            <key>background</key>
-            <string>${c.red}</string>
-          </dict>
-        </dict>
-      </array>
-    </dict>
-    </plist>
-  '';
-
-  flexokiDarkThemeDir = pkgs.runCommand "bat-flexoki-dark-theme" {} ''
-    mkdir -p "$out"
-    cp "${flexokiDarkTmTheme}" "$out/flexoki-dark.tmTheme"
-  '';
 in {
   programs.bat = {
     enable = true;
-    themes = {
-      flexoki-dark = {
-        src = flexokiDarkThemeDir;
-        file = "flexoki-dark.tmTheme";
-      };
-    };
     config = {
       theme = "flexoki-dark";
-      style = "numbers,changes,header";
+      style = "numbers";
     };
   };
+
+  xdg.configFile."bat/themes/flexoki-dark.tmTheme".text = ''
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+      <dict>
+        <key>name</key>
+        <string>flexoki-dark</string>
+        <key>semanticClass</key>
+        <string>theme.dark.flexoki</string>
+        <key>colorSpaceName</key>
+        <string>sRGB</string>
+        <key>settings</key>
+        <array>
+          <dict>
+            <key>settings</key>
+            <dict>
+              <key>background</key>
+              <string>${c.black}</string>
+              <key>foreground</key>
+              <string>${c.text}</string>
+              <key>caret</key>
+              <string>${c.text}</string>
+              <key>lineHighlight</key>
+              <string>${c.bg1}</string>
+              <key>selection</key>
+              <string>${c.bg2}</string>
+              <key>activeGuide</key>
+              <string>${c.bg2}</string>
+              <key>gutterForeground</key>
+              <string>${c.muted}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Base text</string>
+            <key>scope</key>
+            <string>text, source, variable.other.readwrite, punctuation.definition.variable</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.text}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Punctuation</string>
+            <key>scope</key>
+            <string>punctuation, punctuation.definition, punctuation.separator, punctuation.terminator</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.subtext1}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Comments</string>
+            <key>scope</key>
+            <string>comment, punctuation.definition.comment</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.muted}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Strings</string>
+            <key>scope</key>
+            <string>string, punctuation.definition.string</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.green}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Escapes and regex</string>
+            <key>scope</key>
+            <string>constant.character.escape, string.regexp, string.other.regex</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.cyan}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Numbers and booleans</string>
+            <key>scope</key>
+            <string>constant.numeric, constant.language.boolean, constant.language.false, constant.language.true, variable.other.constant, entity.name.constant</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.orange}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Keywords and storage</string>
+            <key>scope</key>
+            <string>keyword, keyword.operator.word, storage.type, storage.modifier, punctuation.definition.keyword</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.purple}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Operators</string>
+            <key>scope</key>
+            <string>keyword.operator, punctuation.accessor</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.subtext1}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Functions</string>
+            <key>scope</key>
+            <string>entity.name.function, support.function, support.function.misc, variable.function, meta.function-call.method</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.blue}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Types and classes</string>
+            <key>scope</key>
+            <string>entity.name.class, entity.other.inherited-class, support.class, entity.name.type, support.type, storage.type</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.yellow}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Parameters</string>
+            <key>scope</key>
+            <string>variable.parameter, variable.parameter.name, meta.function.parameters</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.text}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Built-ins and language constants</string>
+            <key>scope</key>
+            <string>constant.language, support.function.builtin</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.red}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Nix attribute names</string>
+            <key>scope</key>
+            <string>entity.other.attribute-name.multipart.nix, entity.other.attribute-name.single.nix</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.blue}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Nix params and interpolation</string>
+            <key>scope</key>
+            <string>variable.parameter.name.nix, meta.embedded variable.parameter.name.nix</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.text}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Nix paths</string>
+            <key>scope</key>
+            <string>string.unquoted.path.nix</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.cyan}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>JSON YAML TOML keys</string>
+            <key>scope</key>
+            <string>support.type.property-name.json, support.type.property-name.toml, entity.name.tag.yaml, support.type.property-name.yaml</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.blue}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Markdown headings</string>
+            <key>scope</key>
+            <string>markup.heading</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.yellow}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Markdown links</string>
+            <key>scope</key>
+            <string>markup.underline.link, string.other.link, punctuation.definition.link</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.blue}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Markdown code</string>
+            <key>scope</key>
+            <string>markup.inline.raw, markup.raw.block, punctuation.definition.raw</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.green}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Diff inserted</string>
+            <key>scope</key>
+            <string>markup.inserted.diff</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.green}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Diff deleted</string>
+            <key>scope</key>
+            <string>markup.deleted.diff</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.red}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Invalid</string>
+            <key>scope</key>
+            <string>invalid, invalid.illegal</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.black}</string>
+              <key>background</key>
+              <string>${c.red}</string>
+            </dict>
+          </dict>
+        </array>
+      </dict>
+    </plist>
+  '';
 }
