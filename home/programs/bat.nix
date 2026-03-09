@@ -31,7 +31,7 @@
           <key>name</key>
           <string>Comment</string>
           <key>scope</key>
-          <string>comment</string>
+          <string>comment, punctuation.definition.comment</string>
           <key>settings</key>
           <dict>
             <key>foreground</key>
@@ -40,31 +40,9 @@
         </dict>
         <dict>
           <key>name</key>
-          <string>String</string>
-          <key>scope</key>
-          <string>string</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.green}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
-          <string>Number</string>
-          <key>scope</key>
-          <string>constant.numeric</string>
-          <key>settings</key>
-          <dict>
-            <key>foreground</key>
-            <string>${c.orange}</string>
-          </dict>
-        </dict>
-        <dict>
-          <key>name</key>
           <string>Keyword</string>
           <key>scope</key>
-          <string>keyword</string>
+          <string>keyword, keyword.control, keyword.operator.word</string>
           <key>settings</key>
           <dict>
             <key>foreground</key>
@@ -73,20 +51,20 @@
         </dict>
         <dict>
           <key>name</key>
-          <string>Function</string>
+          <string>Storage</string>
           <key>scope</key>
-          <string>entity.name.function</string>
+          <string>storage, storage.type, storage.modifier</string>
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>${c.blue}</string>
+            <string>${c.purple}</string>
           </dict>
         </dict>
         <dict>
           <key>name</key>
           <string>Type</string>
           <key>scope</key>
-          <string>storage.type, support.type</string>
+          <string>entity.name.type, entity.name.class, support.type, support.class</string>
           <key>settings</key>
           <dict>
             <key>foreground</key>
@@ -95,13 +73,206 @@
         </dict>
         <dict>
           <key>name</key>
+          <string>Function</string>
+          <key>scope</key>
+          <string>entity.name.function, support.function, meta.function-call, variable.function</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.blue}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Function Parameter</string>
+          <key>scope</key>
+          <string>variable.parameter</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.text}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Variable</string>
+          <key>scope</key>
+          <string>variable, support.variable</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.text}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
           <string>Constant</string>
           <key>scope</key>
-          <string>constant.language, constant.character, support.constant</string>
+          <string>constant, constant.language, constant.character, support.constant</string>
           <key>settings</key>
           <dict>
             <key>foreground</key>
             <string>${c.cyan}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>String</string>
+          <key>scope</key>
+          <string>string, string.quoted, string.template</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.green}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Escape</string>
+          <key>scope</key>
+          <string>constant.character.escape, string.regexp, string.other.regex</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.cyan}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Number and Boolean</string>
+          <key>scope</key>
+          <string>constant.numeric, constant.language.boolean</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.orange}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Operators</string>
+          <key>scope</key>
+          <string>keyword.operator, punctuation.separator, punctuation.terminator</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.subtext1}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Punctuation</string>
+          <key>scope</key>
+          <string>punctuation.definition, meta.brace, meta.delimiter</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.subtext1}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Tag</string>
+          <key>scope</key>
+          <string>entity.name.tag, meta.tag, support.class.component</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.blue}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Attribute</string>
+          <key>scope</key>
+          <string>entity.other.attribute-name</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.cyan}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Markdown Headings</string>
+          <key>scope</key>
+          <string>markup.heading, punctuation.definition.heading</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.blue}</string>
+            <key>fontStyle</key>
+            <string>bold</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Markdown Emphasis</string>
+          <key>scope</key>
+          <string>markup.bold, markup.italic</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.text}</string>
+            <key>fontStyle</key>
+            <string>bold</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Markdown Code</string>
+          <key>scope</key>
+          <string>markup.inline.raw, markup.fenced_code, markup.raw</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.green}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Diff Added</string>
+          <key>scope</key>
+          <string>markup.inserted, meta.diff.header.from-file</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.green}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Diff Changed</string>
+          <key>scope</key>
+          <string>markup.changed</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.yellow}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Diff Removed</string>
+          <key>scope</key>
+          <string>markup.deleted, meta.diff.header.to-file</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.red}</string>
+          </dict>
+        </dict>
+        <dict>
+          <key>name</key>
+          <string>Link</string>
+          <key>scope</key>
+          <string>markup.underline.link, string.other.link</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>${c.cyan}</string>
+            <key>fontStyle</key>
+            <string>underline</string>
           </dict>
         </dict>
         <dict>
