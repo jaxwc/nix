@@ -14,6 +14,7 @@
 
     finder = {
       AppleShowAllFiles = true;
+      AppleShowAllExtensions = true;
       ShowPathbar = true;
       ShowStatusBar = true;
       FXPreferredViewStyle = "Nlsv";
@@ -25,10 +26,22 @@
       autohide = true;
       autohide-delay = 1000.0;
       autohide-time-modifier = 0.0;
+      show-recents = false;
+      mru-spaces = false;
     };
 
     trackpad = {
       Clicking = true;
+      TrackpadThreeFingerDrag = false;
+    };
+
+    loginwindow = {
+      GuestEnabled = false;
+      SHOWFULLNAME = false;
+    };
+
+    WindowManager = {
+      EnableStandardClickToShowDesktop = false;
     };
 
     CustomUserPreferences = {
@@ -42,10 +55,6 @@
           "65" = {enabled = 0;};
           "184" = {enabled = 0;};
         };
-      };
-      "com.apple.WindowManager" = {
-        StandardHideWidgets = 1;
-        GloballyEnabled = false;
       };
     };
   };
