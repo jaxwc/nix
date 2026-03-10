@@ -27,7 +27,6 @@
       autohide-delay = 1000.0;
       autohide-time-modifier = 0.0;
       show-recents = false;
-      mru-spaces = false;
     };
 
     trackpad = {
