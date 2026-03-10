@@ -27,10 +27,12 @@
       show-recents = false;
       wvous-br-corner = 1;
       wvous-br-modifier = 0;
+      showMissionControlGestureEnabled = false;
     };
 
     trackpad = {
       Clicking = true;
+      TrackpadTwoFingerFromRightEdgeSwipeGesture = 0;
     };
 
     loginwindow = {
@@ -38,8 +40,15 @@
       SHOWFULLNAME = false;
     };
 
+    screensaver = {
+      askForPassword = true;
+      askForPasswordDelay = 0;
+    };
+
     WindowManager = {
       EnableStandardClickToShowDesktop = false;
+      GloballyEnabled = false;
+      EnableTiledWindowMargins = false;
     };
 
     CustomUserPreferences = {
