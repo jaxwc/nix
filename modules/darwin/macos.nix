@@ -28,7 +28,6 @@
       show-recents = false;
       wvous-br-corner = 1;
       showMissionControlGestureEnabled = false;
-      enterMissionControlByTopWindowDrag = false;
     };
 
     trackpad = {
