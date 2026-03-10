@@ -48,8 +48,8 @@
     WindowManager = {
       EnableStandardClickToShowDesktop = false;
       GloballyEnabled = false;
-      EnableTiledWindowMargins = false;
       EnableTopTilingByEdgeDrag = false;
+      EnableTilingByEdgeDrag = false;
     };
 
     CustomUserPreferences = {
