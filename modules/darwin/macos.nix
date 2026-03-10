@@ -2,8 +2,8 @@
   system.defaults = {
     NSGlobalDomain = {
       AppleICUForce24HourTime = true;
-      InitialKeyRepeat = 15;
-      KeyRepeat = 2;
+      InitialKeyRepeat = 10;
+      KeyRepeat = 1;
       AppleShowAllExtensions = true;
       NSAutomaticCapitalizationEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
