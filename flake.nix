@@ -1,5 +1,5 @@
 {
-  description = "Jackson's Modular Nix-Darwin Config";
+  description = "nix-darwin";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
