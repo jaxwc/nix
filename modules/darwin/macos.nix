@@ -9,6 +9,7 @@
       NSAutomaticPeriodSubstitutionEnabled = false;
       ApplePressAndHoldEnabled = false;
       _HIHideMenuBar = true;
+      NSWindowShouldDragOnGesture = true;
     };
 
     finder = {
@@ -48,6 +49,7 @@
       EnableStandardClickToShowDesktop = false;
       GloballyEnabled = false;
       EnableTiledWindowMargins = false;
+      EnableTopTilingByEdgeDrag = false;
     };
 
     CustomUserPreferences = {
