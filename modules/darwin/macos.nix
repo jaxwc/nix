@@ -26,7 +26,6 @@
       autohide-time-modifier = 0.0;
       show-recents = false;
       wvous-br-corner = 1;
-      wvous-br-modifier = 0;
       showMissionControlGestureEnabled = false;
     };
 
