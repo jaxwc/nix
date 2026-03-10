@@ -2,9 +2,8 @@
   system.defaults = {
     NSGlobalDomain = {
       AppleICUForce24HourTime = true;
-      InitialKeyRepeat = 10;
-      KeyRepeat = 1;
-      AppleShowAllExtensions = true;
+      InitialKeyRepeat = 15;
+      KeyRepeat = 2;
       NSAutomaticCapitalizationEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
       NSAutomaticPeriodSubstitutionEnabled = false;
@@ -18,7 +17,6 @@
       ShowPathbar = true;
       ShowStatusBar = true;
       FXPreferredViewStyle = "Nlsv";
-      _FXSortFoldersFirst = true;
       FXEnableExtensionChangeWarning = false;
     };
 
@@ -27,11 +25,12 @@
       autohide-delay = 1000.0;
       autohide-time-modifier = 0.0;
       show-recents = false;
+      wvous-br-corner = 1;
+      wvous-br-modifier = 0;
     };
 
     trackpad = {
       Clicking = true;
-      TrackpadThreeFingerDrag = false;
     };
 
     loginwindow = {
