@@ -60,7 +60,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.subtext1}</string>
+              <string>${c.muted}</string>
             </dict>
           </dict>
           <dict>
@@ -71,7 +71,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.muted}</string>
+              <string>${c.uiMuted}</string>
             </dict>
           </dict>
           <dict>
@@ -126,7 +126,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.subtext1}</string>
+              <string>${c.muted}</string>
             </dict>
           </dict>
           <dict>
