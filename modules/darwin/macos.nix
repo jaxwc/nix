@@ -7,7 +7,6 @@
       NSAutomaticCapitalizationEnabled = false;
       NSAutomaticSpellingCorrectionEnabled = false;
       NSAutomaticPeriodSubstitutionEnabled = false;
-      NSAutomaticTextReplacementEnabled = false;
       ApplePressAndHoldEnabled = false;
       _HIHideMenuBar = true;
       NSWindowShouldDragOnGesture = true;
