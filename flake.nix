@@ -49,6 +49,9 @@
             user = user;
             autoMigrate = true;
             enableRosetta = false;
+            enableFishIntegration = false;
+            enableZshIntegration = false;
+            enableBashIntegration = false;
             mutableTaps = false;
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
