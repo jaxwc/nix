@@ -7,11 +7,29 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
   outputs = {
     nix-darwin,
     home-manager,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
+    homebrew-bundle,
     ...
   }: let
     user = "jackson";
@@ -23,6 +41,24 @@
 
       modules = [
         ./modules/darwin
+
+        nix-homebrew.darwinModules.nix-homebrew
+        ({config, ...}: {
+          nix-homebrew = {
+            enable = true;
+            user = user;
+            autoMigrate = true;
+            enableRosetta = false;
+            mutableTaps = false;
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+              "homebrew/homebrew-bundle" = homebrew-bundle;
+            };
+          };
+
+          homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
+        })
 
         home-manager.darwinModules.home-manager
         {
