@@ -17,7 +17,7 @@
     mas
     mysides
     nixd
-    nodejs_22
+    nodejs
     opencode
     python314
     ripgrep
