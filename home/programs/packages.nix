@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     aerospace
-	alejandra
+    alejandra
     bash
     eza
     fd
@@ -14,9 +14,10 @@
     lazygit
     lua5_4
     luarocks
-	mas
-	nixd
-	nodejs_22
+    mas
+    mysides
+    nixd
+    nodejs_22
     opencode
     python314
     ripgrep
@@ -24,6 +25,5 @@
     sketchybar
     sketchybar-app-font
     stow
-    syncthing
   ];
 }

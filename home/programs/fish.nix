@@ -1,6 +1,5 @@
 {
   pkgs,
-  user,
   theme,
   ...
 }: {
@@ -44,7 +43,6 @@
     };
     interactiveShellInit = ''
       set -g fish_greeting
-      fish_add_path -m /etc/profiles/per-user/${user}/bin
 
       set -gx JAVA_HOME "${pkgs.jdk}/lib/openjdk"
       fish_add_path $JAVA_HOME/bin

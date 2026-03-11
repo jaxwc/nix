@@ -15,7 +15,7 @@
   ];
 
   launchd.user.envVariables.PATH =
-    "/etc/profiles/per-user/${user}/bin:/run/current-system/sw/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin";
+    "/etc/profiles/per-user/${user}/bin:/run/current-system/sw/bin:/usr/bin:/bin:/usr/sbin:/sbin";
 
   system.stateVersion = 6;
 }
