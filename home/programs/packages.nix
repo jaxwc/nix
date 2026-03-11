@@ -12,7 +12,7 @@
     jdk
     jq
     lazygit
-    lua
+    lua5_4
     luarocks
     mas
     mysides
