@@ -16,6 +16,7 @@
       window-padding-balance = true
 
       cursor-style = block
+      cursor-style-blink = false
       cursor-invert-fg-bg = true
 
       mouse-hide-while-typing = true
