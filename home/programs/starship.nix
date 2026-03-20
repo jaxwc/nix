@@ -86,7 +86,7 @@ in {
 
       custom.giturl = {
         description = "Display symbol for remote Git server";
-        shell = [ "sh" ];
+        shell = ["sh"];
         command = ''
           # Get remote URL and map provider icon
           URL=$(git remote get-url origin 2>/dev/null)
@@ -127,7 +127,7 @@ in {
       golang = {
         symbol = "";
         format = "[ $symbol( $version) ]($style)";
-        detect_files = [ "go.mod" ];
+        detect_files = ["go.mod"];
       };
 
       php = {
