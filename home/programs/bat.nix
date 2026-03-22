@@ -4,20 +4,20 @@ in {
   programs.bat = {
     enable = true;
     config = {
-      theme = "flexoki-dark";
+      theme = theme.name;
       style = "numbers";
     };
   };
 
-  xdg.configFile."bat/themes/flexoki-dark.tmTheme".text = ''
+  xdg.configFile."bat/themes/${theme.name}.tmTheme".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
       <dict>
         <key>name</key>
-        <string>flexoki-dark</string>
+        <string>${theme.name}</string>
         <key>semanticClass</key>
-        <string>theme.dark.flexoki</string>
+        <string>theme.dark.${theme.name}</string>
         <key>colorSpaceName</key>
         <string>sRGB</string>
         <key>settings</key>

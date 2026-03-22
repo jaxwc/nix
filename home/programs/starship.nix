@@ -13,9 +13,9 @@ in {
 
       right_format = "$all";
 
-      palette = "flexoki";
+      palette = "active";
 
-      palettes.flexoki = {
+      palettes.active = {
         base = c.black;
         mantle = c.bg1;
         crust = c.bg2;

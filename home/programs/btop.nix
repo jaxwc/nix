@@ -5,7 +5,7 @@ in {
     enable = true;
 
     settings = {
-      color_theme = "flexoki-dark";
+      color_theme = theme.name;
       theme_background = false;
       truecolor = true;
       vim_keys = true;
@@ -35,7 +35,7 @@ in {
       save_config_on_exit = true;
     };
 
-    themes.flexoki-dark = ''
+    themes.${theme.name} = ''
       theme[main_bg]="${c.black}"
       theme[main_fg]="${c.text}"
       theme[title]="${c.text}"
