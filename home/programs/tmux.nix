@@ -1,7 +1,10 @@
-{pkgs, theme, ...}: let
-  c = theme.colors;
-in
 {
+  pkgs,
+  theme,
+  ...
+}: let
+  c = theme.colors;
+in {
   programs.tmux = {
     enable = true;
 
@@ -49,7 +52,6 @@ in
       bind-key k select-pane -U
       bind-key l select-pane -R
 
-      # Flexoki Dark Theme
       set -g @bg "${c.black}"
       set -g @fg "${c.text}"
       set -g @bg_subtle "${c.bg1}"

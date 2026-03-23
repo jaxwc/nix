@@ -1,13 +1,13 @@
 {theme, ...}: {
   xdg.configFile."ghostty/config" = {
     text = ''
-      auto-update-channel = tip
+      auto-update-channel = stable
 
       font-family = JetBrainsMono Nerd Font
       font-size = 16
 
       theme = ${theme.ghosttyTheme}
-      background-opacity = 0.70
+      background-opacity = 0.80
       background-blur = true
       background = ${theme.colors.black}
 

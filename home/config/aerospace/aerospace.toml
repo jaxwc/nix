@@ -8,7 +8,7 @@ config-version = 2
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [ 'exec-and-forget @PROFILE_BIN@/sketchybar --config @HOME@/.config/sketchybar/sketchybarrc',
-	'exec-and-forget @PROFILE_BIN@/borders active_color=0xff3aa99f inactive_color=0xff575653 width=5.0',
+	'exec-and-forget @PROFILE_BIN@/borders active_color=0xff7dcfff inactive_color=0xff565f89 width=5.0',
 ]
 
 exec-on-workspace-change = ['/bin/bash', '-c',

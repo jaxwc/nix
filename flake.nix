@@ -43,7 +43,7 @@
   }: let
     user = "jackson";
     hostname = "Jacksons-MacBook-Pro";
-    themeName = "flexoki-dark";
+    themeName = "tokyo-night-storm";
     theme = import ./lib/theme.nix {name = themeName;};
   in {
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
