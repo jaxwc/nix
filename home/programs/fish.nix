@@ -28,6 +28,7 @@
       tree = "eza --tree --level=2 --all";
       c = "clear";
       ta = "tmux attach";
+      oc = "opencode";
     };
     functions = {
       fn.body = ''
