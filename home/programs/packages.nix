@@ -4,7 +4,6 @@
     alejandra
     bash
     eza
-    fastfetch
     fd
     ghostscript
     gh
