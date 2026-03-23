@@ -41,6 +41,12 @@
           nvim .
         end
       '';
+      oca.body = ''
+        opencode agent create --path "$HOME/.config/nix/home/config/opencode/agent" $argv
+      '';
+      ocs.body = ''
+        nvim "$HOME/.config/nix/home/config/opencode/skills"
+      '';
     };
     interactiveShellInit = ''
                set -g fish_greeting
