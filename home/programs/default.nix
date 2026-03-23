@@ -1,7 +1,7 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./git.nix
+    ./fastfetch.nix
     ./fish.nix
     ./fzf.nix
     ./bat.nix
