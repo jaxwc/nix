@@ -19,7 +19,7 @@
       "raycast"
       "sf-symbols"
       "spotify"
-      "tailscale-app"
+      "tailscale"
       "zen"
     ];
   };
