@@ -28,7 +28,6 @@
       tree = "eza --tree --level=2 --all";
       c = "clear";
       ta = "tmux attach";
-      oc = "opencode";
     };
     functions = {
       fn.body = ''
@@ -40,12 +39,6 @@
           cd "$dir"
           nvim .
         end
-      '';
-      oca.body = ''
-        opencode agent create --path "$HOME/.config/nix/home/config/opencode" $argv
-      '';
-      ocs.body = ''
-        nvim "$HOME/.config/nix/home/config/opencode/skills"
       '';
     };
     interactiveShellInit = ''

@@ -14,6 +14,5 @@
     ./neovim.nix
     ./syncthing.nix
     ./packages.nix
-    ./opencode.nix
   ];
 }
