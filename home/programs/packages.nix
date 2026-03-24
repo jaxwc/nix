@@ -14,8 +14,6 @@
     lazygit
     lua5_4
     luarocks
-    mas
-    mysides
     nixd
     nodejs
     opencode
@@ -24,6 +22,5 @@
     sbarlua
     sketchybar
     sketchybar-app-font
-    stow
   ];
 }
