@@ -42,7 +42,7 @@
         end
       '';
       oca.body = ''
-        opencode agent create --path "$HOME/.config/nix/home/config/opencode/agent" $argv
+        opencode agent create --path "$HOME/.config/nix/home/config/opencode" $argv
       '';
       ocs.body = ''
         nvim "$HOME/.config/nix/home/config/opencode/skills"
