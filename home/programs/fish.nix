@@ -42,7 +42,7 @@
       '';
     };
     interactiveShellInit = ''
-               set -g fish_greeting
+      set -g fish_greeting
       fish_vi_key_bindings
       # Force block cursor in all fish vi modes
       set -g fish_cursor_default block
