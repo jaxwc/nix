@@ -26,19 +26,19 @@ in {
             <key>settings</key>
             <dict>
               <key>background</key>
-              <string>${c.black}</string>
+              <string>${c.bg}</string>
               <key>foreground</key>
-              <string>${c.text}</string>
+              <string>${c.fg}</string>
               <key>caret</key>
-              <string>${c.text}</string>
+              <string>#DBC08A</string>
               <key>lineHighlight</key>
-              <string>${c.bg1}</string>
+              <string>#00000030</string>
               <key>selection</key>
-              <string>${c.bg2}</string>
+              <string>#9D599D40</string>
               <key>activeGuide</key>
-              <string>${c.bg2}</string>
+              <string>#363b54</string>
               <key>gutterForeground</key>
-              <string>${c.muted}</string>
+              <string>#3b415caa</string>
             </dict>
           </dict>
           <dict>
@@ -49,7 +49,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.text}</string>
+              <string>${c.fg}</string>
             </dict>
           </dict>
           <dict>
@@ -60,7 +60,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.muted}</string>
+              <string>${c.dark5}</string>
             </dict>
           </dict>
           <dict>
@@ -71,7 +71,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.uiMuted}</string>
+              <string>${c.comment}</string>
             </dict>
           </dict>
           <dict>
@@ -87,13 +87,24 @@ in {
           </dict>
           <dict>
             <key>name</key>
-            <string>Escapes and regex</string>
+            <string>Escapes</string>
             <key>scope</key>
-            <string>constant.character.escape, string.regexp, string.other.regex</string>
+            <string>constant.character.escape</string>
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.cyan}</string>
+              <string>${c.blue5}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Regex</string>
+            <key>scope</key>
+            <string>string.regexp, string.other.regex</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.blue6}</string>
             </dict>
           </dict>
           <dict>
@@ -111,7 +122,18 @@ in {
             <key>name</key>
             <string>Keywords and storage</string>
             <key>scope</key>
-            <string>keyword, keyword.operator.word, storage.type, storage.modifier, punctuation.definition.keyword</string>
+            <string>keyword, keyword.operator.word, storage.type, punctuation.definition.keyword</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>${c.magenta}</string>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>Storage modifiers</string>
+            <key>scope</key>
+            <string>storage.modifier</string>
             <key>settings</key>
             <dict>
               <key>foreground</key>
@@ -126,7 +148,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.muted}</string>
+              <string>${c.blue5}</string>
             </dict>
           </dict>
           <dict>
@@ -148,7 +170,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.yellow}</string>
+              <string>${c.blue2}</string>
             </dict>
           </dict>
           <dict>
@@ -159,7 +181,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.text}</string>
+              <string>${c.yellow}</string>
             </dict>
           </dict>
           <dict>
@@ -170,7 +192,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.red}</string>
+              <string>${c.yellow}</string>
             </dict>
           </dict>
           <dict>
@@ -203,7 +225,7 @@ in {
             <key>settings</key>
             <dict>
               <key>foreground</key>
-              <string>${c.black}</string>
+              <string>${c.bg}</string>
               <key>background</key>
               <string>${c.red}</string>
             </dict>

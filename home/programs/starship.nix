@@ -16,13 +16,13 @@ in {
       palette = "active";
 
       palettes.active = {
-        base = c.black;
-        mantle = c.bg1;
-        crust = c.bg2;
-        text = c.text;
-        subtext1 = c.subtext1;
-        subtext0 = c.muted;
-        muted = c.uiMuted;
+        base = c.bg;
+        mantle = c.bg_dark;
+        crust = c.bg_highlight;
+        text = c.fg;
+        subtext1 = c.fg_dark;
+        subtext0 = c.dark5;
+        muted = c.comment;
         red = c.red;
         orange = c.orange;
         yellow = c.yellow;
@@ -34,12 +34,12 @@ in {
         sapphire = c.blue;
         lavender = c.purple;
         peach = c.orange;
-        teal = c.cyan;
-        pine = c.pine;
+        teal = c.teal;
+        pine = c.blue1;
         maroon = c.red;
         pink = c.magenta;
         flamingo = c.magenta;
-        rosewater = c.text;
+        rosewater = c.fg;
         gold = c.yellow;
         rose = c.red;
         sky = c.blue;

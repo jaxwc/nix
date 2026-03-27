@@ -52,10 +52,10 @@ in {
       bind-key k select-pane -U
       bind-key l select-pane -R
 
-      set -g @bg "${c.black}"
-      set -g @fg "${c.text}"
-      set -g @bg_subtle "${c.bg1}"
-      set -g @ui_muted "${c.uiMuted}"
+      set -g @bg "${c.bg}"
+      set -g @fg "${c.fg}"
+      set -g @bg_subtle "${c.bg_dark}"
+      set -g @ui_muted "${c.comment}"
       set -g @red "${c.red}"
       set -g @orange "${c.orange}"
       set -g @yellow "${c.yellow}"
@@ -64,7 +64,7 @@ in {
       set -g @blue "${c.blue}"
       set -g @purple "${c.purple}"
       set -g @magenta "${c.magenta}"
-      set -g @transparent "${c.transparent}"
+      set -g @transparent "${theme.transparent}"
 
       set -g status-left-length 100
       set -g status-left ""
