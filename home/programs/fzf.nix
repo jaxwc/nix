@@ -8,11 +8,11 @@
 
     colors = {
       "bg+" = theme.colors.bg_visual;
-      bg = theme.colors.bg_dark;
+      bg = "-1";
       border = theme.colors.border_highlight;
       fg = theme.colors.fg;
       "fg+" = theme.colors.fg;
-      gutter = theme.colors.bg_dark;
+      gutter = "-1";
       header = theme.colors.orange;
       hl = theme.colors.blue1;
       "hl+" = theme.colors.blue1;
