@@ -14,6 +14,7 @@
     lazygit
     lua5_4
     luarocks
+    maven
     nixd
     nodejs
     opencode
