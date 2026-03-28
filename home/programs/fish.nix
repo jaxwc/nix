@@ -52,7 +52,7 @@
       set -g fish_cursor_visual block
       set -g fish_cursor_external block
 
-      set -gx JAVA_HOME "${pkgs.jdk}/lib/openjdk"
+      set -gx JAVA_HOME "${pkgs.jdk}"
       fish_add_path $JAVA_HOME/bin
 
       set -gx THEME_BG "${theme.colors.bg}"
