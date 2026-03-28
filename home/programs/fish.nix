@@ -31,10 +31,10 @@
     };
     functions = {
       fn.body = ''
-        nvim (fd --type f --hidden --exclude .git | fzf --preview "bat --color=always --style=numbers --line-range=:500 {}")
+        nvim (fd --type f --strip-cwd-prefix --hidden --follow --exclude .git | fzf --preview "bat --color=always --line-range=:500 {}")
       '';
       fp.body = ''
-        set dir (fd --type d --hidden --exclude .git | fzf)
+        set dir (fd --type d --strip-cwd-prefix --hidden --follow --exclude .git | fzf)
         if test -n "$dir"
           cd "$dir"
           nvim .
@@ -52,49 +52,49 @@
       set -g fish_cursor_visual block
       set -g fish_cursor_external block
 
-               set -gx JAVA_HOME "${pkgs.jdk}/lib/openjdk"
-               fish_add_path $JAVA_HOME/bin
+      set -gx JAVA_HOME "${pkgs.jdk}/lib/openjdk"
+      fish_add_path $JAVA_HOME/bin
 
-                set -gx THEME_BG "${theme.colors.bg}"
-                set -gx THEME_FG "${theme.colors.fg}"
-                set -gx THEME_MUTED "${theme.colors.dark5}"
-                set -gx THEME_BLUE "${theme.colors.blue}"
-                set -gx THEME_GREEN "${theme.colors.green}"
-                set -gx THEME_RED "${theme.colors.red}"
+      set -gx THEME_BG "${theme.colors.bg}"
+      set -gx THEME_FG "${theme.colors.fg}"
+      set -gx THEME_MUTED "${theme.colors.dark5}"
+      set -gx THEME_BLUE "${theme.colors.blue}"
+      set -gx THEME_GREEN "${theme.colors.green}"
+      set -gx THEME_RED "${theme.colors.red}"
 
-                set -l foreground ${theme.rawHexValue theme.colors.fg}
-                set -l selection ${theme.rawHexValue theme.colors.bg_visual}
-                set -l comment ${theme.rawHexValue theme.colors.comment}
-                set -l red ${theme.rawHexValue theme.colors.red}
-                set -l orange ${theme.rawHexValue theme.colors.orange}
-                set -l yellow ${theme.rawHexValue theme.colors.yellow}
-                set -l green ${theme.rawHexValue theme.colors.green}
-                set -l magenta ${theme.rawHexValue theme.colors.magenta}
-                set -l purple ${theme.rawHexValue theme.colors.purple}
-                set -l cyan ${theme.rawHexValue theme.colors.cyan}
-                set -l blue ${theme.rawHexValue theme.colors.blue}
+      set -l foreground ${theme.rawHexValue theme.colors.fg}
+      set -l selection ${theme.rawHexValue theme.colors.bg_visual}
+      set -l comment ${theme.rawHexValue theme.colors.comment}
+      set -l red ${theme.rawHexValue theme.colors.red}
+      set -l orange ${theme.rawHexValue theme.colors.orange}
+      set -l yellow ${theme.rawHexValue theme.colors.yellow}
+      set -l green ${theme.rawHexValue theme.colors.green}
+      set -l magenta ${theme.rawHexValue theme.colors.magenta}
+      set -l purple ${theme.rawHexValue theme.colors.purple}
+      set -l cyan ${theme.rawHexValue theme.colors.cyan}
+      set -l blue ${theme.rawHexValue theme.colors.blue}
 
-                set -g fish_color_normal $foreground
-                set -g fish_color_command $cyan
-                set -g fish_color_keyword $magenta
-                set -g fish_color_quote $yellow
-                set -g fish_color_redirection $foreground
-                set -g fish_color_end $orange
-                set -g fish_color_option $magenta
-                set -g fish_color_error $red
-                set -g fish_color_param $purple
-                set -g fish_color_comment $comment
-                set -g fish_color_selection --background=$selection
-                set -g fish_color_search_match --background=$selection
-                set -g fish_color_operator $green
-                set -g fish_color_escape $magenta
-                set -g fish_color_autosuggestion $comment
+      set -g fish_color_normal $foreground
+      set -g fish_color_command $cyan
+      set -g fish_color_keyword $magenta
+      set -g fish_color_quote $yellow
+      set -g fish_color_redirection $foreground
+      set -g fish_color_end $orange
+      set -g fish_color_option $magenta
+      set -g fish_color_error $red
+      set -g fish_color_param $purple
+      set -g fish_color_comment $comment
+      set -g fish_color_selection --background=$selection
+      set -g fish_color_search_match --background=$selection
+      set -g fish_color_operator $green
+      set -g fish_color_escape $magenta
+      set -g fish_color_autosuggestion $comment
 
-               set -g fish_pager_color_progress $comment
-               set -g fish_pager_color_prefix $cyan
-               set -g fish_pager_color_completion $foreground
-               set -g fish_pager_color_description $comment
-               set -g fish_pager_color_selected_background --background=$selection
+      set -g fish_pager_color_progress $comment
+      set -g fish_pager_color_prefix $cyan
+      set -g fish_pager_color_completion $foreground
+      set -g fish_pager_color_description $comment
+      set -g fish_pager_color_selected_background --background=$selection
 
     '';
   };

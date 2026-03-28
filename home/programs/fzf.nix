@@ -1,4 +1,4 @@
-{theme, ...}: {
+{lib, theme, ...}: {
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
@@ -39,7 +39,7 @@
     ];
 
     fileWidgetOptions = [
-      "--preview=bat --color=always --style=numbers --line-range=:500 {}"
+      "--preview=${lib.escapeShellArg "bat --color=always --line-range=:500 {}"}"
     ];
   };
 }
