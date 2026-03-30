@@ -20,7 +20,7 @@
       "sf-symbols"
       "spotify"
       "zen"
-      "tailscale"
+      "tailscale-app"
     ];
   };
 }
