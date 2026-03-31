@@ -12,7 +12,7 @@
     jdk
     jq
     lazygit
-    lua5_4
+    lua5_5
     luarocks
     maven
     nixd
