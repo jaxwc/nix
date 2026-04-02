@@ -13,6 +13,7 @@
       "font-jetbrains-mono-nerd-font"
       "font-sf-pro"
       "ghostty"
+      "intellij-idea"
       "jellyfin-media-player"
       "obsidian"
       "protonvpn"
