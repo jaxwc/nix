@@ -19,7 +19,7 @@ return {
 
 			styles = {
 				comments = { italic = false },
-				keywords = { italic = false },
+				keywords = { italic = true },
 				sidebars = transparent and "transparent" or "dark",
 				floats = transparent and "transparent" or "dark",
 			},
