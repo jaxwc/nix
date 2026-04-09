@@ -1,12 +1,12 @@
 {...}: {
   programs.git = {
     enable = true;
-    signing.format = null;
+    userName = "jackson";
+    userEmail = "jacksonwc@proton.me";
     settings = {
-      user = {
-        name = "jackson";
-        email = "jacksonwc@proton.me";
-      };
+      init.defaultBranch = "main";
+      fetch.prune = true;
+      push.autoSetupRemote = true;
     };
   };
 }

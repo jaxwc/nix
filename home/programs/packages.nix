@@ -6,7 +6,6 @@
     eza
     fd
     ghostscript
-    gh
     imagemagick
     jankyborders
     jdk
