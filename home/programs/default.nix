@@ -15,5 +15,6 @@
     ./neovim.nix
     ./syncthing.nix
     ./packages.nix
+    ./ssh.nix
   ];
 }
