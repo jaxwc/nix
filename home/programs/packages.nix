@@ -22,5 +22,6 @@
     sbarlua
     sketchybar
     sketchybar-app-font
+    llama-cpp
   ];
 }

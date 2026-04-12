@@ -22,7 +22,6 @@
       "spotify"
       "zen"
       "tailscale-app"
-      "helium-browser"
     ];
   };
 }
