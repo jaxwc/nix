@@ -30,15 +30,15 @@ in {
               <key>foreground</key>
               <string>${c.fg}</string>
               <key>caret</key>
-              <string>#DBC08A</string>
+              <string>${c.cyan}</string>
               <key>lineHighlight</key>
-              <string>#00000030</string>
+              <string>#28176a30</string>
               <key>selection</key>
-              <string>#9D599D40</string>
+              <string>#6a39dc55</string>
               <key>activeGuide</key>
-              <string>#363b54</string>
+              <string>${c.border}</string>
               <key>gutterForeground</key>
-              <string>#3b415caa</string>
+              <string>#7a72a8aa</string>
             </dict>
           </dict>
           <dict>

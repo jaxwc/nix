@@ -1,4 +1,4 @@
-{name ? "tokyo-night-storm"}: let
+{name ? "spiderverse"}: let
   rawHexValue = color: builtins.substring 1 6 color;
 
   themes = {
@@ -55,6 +55,61 @@
         terminal_black = "#414868";
         todo = "#7aa2f7";
         warning = "#e0af68";
+      };
+    };
+
+    "spiderverse" = {
+      name = "spiderverse";
+      transparent = "#00000000";
+
+      colors = {
+        bg = "#0b0918";
+        bg_dark = "#07050f";
+        bg_dark1 = "#040309";
+        bg_float = "#16092f";
+        bg_highlight = "#28176a";
+        bg_popup = "#1d1148";
+        bg_search = "#4526b8";
+        bg_sidebar = "#080612";
+        bg_statusline = "#07050f";
+        bg_visual = "#6a39dc";
+        black = "#05030a";
+        blue = "#5f86ff";
+        blue0 = "#2b37a3";
+        blue1 = "#35e8ff";
+        blue2 = "#11c8ff";
+        blue5 = "#97edff";
+        blue6 = "#d6fbff";
+        blue7 = "#3c4690";
+        border = "#29155f";
+        border_highlight = "#35e8ff";
+        comment = "#7a72a8";
+        cyan = "#35e8ff";
+        dark3 = "#655d92";
+        dark5 = "#a198ce";
+        error = "#ff4b87";
+        fg = "#f1ebff";
+        fg_dark = "#d0c7f4";
+        fg_float = "#fbf7ff";
+        fg_gutter = "#3b3168";
+        fg_sidebar = "#ddd5fb";
+        red = "#ff4b87";
+        red1 = "#ff1f6d";
+        orange = "#ffb347";
+        yellow = "#ffe066";
+        green = "#2cf0cb";
+        green1 = "#82ffe4";
+        green2 = "#19c7ab";
+        hint = "#2cf0cb";
+        info = "#35e8ff";
+        magenta = "#ff38c8";
+        magenta2 = "#ff00a8";
+        none = "NONE";
+        purple = "#b18cff";
+        teal = "#14d0db";
+        terminal_black = "#342d62";
+        todo = "#b18cff";
+        warning = "#ffe066";
       };
     };
   };
