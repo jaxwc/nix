@@ -5,7 +5,7 @@
       font-family = JetBrainsMono Nerd Font
       font-size = 16
       theme = nix-theme
-      background-opacity = 0.70
+      background-opacity = 0.80
       background-blur = true
       window-padding-x = 8
       window-padding-y = 8
