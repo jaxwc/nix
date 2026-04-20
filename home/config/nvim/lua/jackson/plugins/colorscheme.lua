@@ -3,8 +3,8 @@ return {
 	name = "folkeTokyonight",
 	config = function()
 		local transparent = true
-		local bg = "#0b0918"
-		local bg_dark = "#07050f"
+		local bg = "#07060e"
+		local bg_dark = "#050409"
 		local bg_float = "#16092f"
 		local bg_highlight = "#28176a"
 		local bg_popup = "#1d1148"
@@ -21,28 +21,28 @@ return {
 
 		local black = "#05030a"
 		local border = "#29155f"
-		local border_highlight = "#35e8ff"
+		local border_highlight = "#18d8f0"
 		local terminal_black = "#342d62"
 
 		local red = "#ff4b87"
 		local red1 = "#ff1f6d"
-		local orange = "#ffb347"
+		local orange = "#ff6820"
 		local yellow = "#ffe066"
-		local green = "#2cf0cb"
-		local green1 = "#82ffe4"
-		local green2 = "#19c7ab"
-		local cyan = "#35e8ff"
-		local blue = "#5f86ff"
-		local blue0 = "#2b37a3"
-		local blue1 = "#35e8ff"
+		local green = "#40e055"
+		local green1 = "#80f095"
+		local green2 = "#2ab040"
+		local cyan = "#18d8f0"
+		local blue = "#3060f0"
+		local blue0 = "#1a2872"
+		local blue1 = "#18d8f0"
 		local blue2 = "#11c8ff"
 		local blue5 = "#97edff"
 		local blue6 = "#d6fbff"
-		local blue7 = "#3c4690"
+		local blue7 = "#1e2d80"
 		local magenta = "#ff38c8"
 		local magenta2 = "#ff00a8"
-		local purple = "#b18cff"
-		local teal = "#14d0db"
+		local purple = "#8840f0"
+		local teal = "#10c8d8"
 
 		require("tokyonight").setup({
 			style = "storm",
@@ -105,7 +105,7 @@ return {
 				colors.todo = purple
 
 				colors.diff = {
-					add = "#123c35",
+					add = "#122e18",
 					delete = "#4a1830",
 					change = "#2a235a",
 					text = bg_highlight,

@@ -7,12 +7,12 @@ local volume = sbar.add("item", "volume", {
 
 	icon = {
 		string = icons.volume._100,
-		color = colors.yellow,
+		color = colors.magenta,
 	},
 
 	label = {
 		string = "??%",
-		color = colors.yellow,
+		color = colors.magenta,
 	},
 })
 

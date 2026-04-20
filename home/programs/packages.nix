@@ -23,5 +23,6 @@
     sketchybar
     sketchybar-app-font
     llama-cpp
+    claude-code
   ];
 }

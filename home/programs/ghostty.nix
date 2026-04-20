@@ -5,8 +5,8 @@
       font-family = JetBrainsMono Nerd Font
       font-size = 16
       theme = nix-theme
-      background-opacity = 0.65
-      background-blur = macos-glass-clear
+      background-opacity = 0.70
+      background-blur = true
       window-padding-x = 8
       window-padding-y = 8
       window-padding-balance = true
