@@ -6,6 +6,7 @@
     vimAlias = true;
     withRuby = false;
     withPython3 = false;
+    sideloadInitLua = true;
   };
 
   xdg.configFile."nvim" = {
