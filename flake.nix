@@ -37,10 +37,14 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+
+    mikker-homebrew-tap = {
+      url = "github:mikker/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs = {
-    nixpkgs,
     nixpkgs-small,
     nix-darwin,
     home-manager,
@@ -48,6 +52,7 @@
     homebrew-core,
     homebrew-cask,
     homebrew-bundle,
+    mikker-homebrew-tap,
     ...
   }: let
     user = "jackson";
@@ -80,10 +85,16 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "homebrew/homebrew-bundle" = homebrew-bundle;
+              "mikker/homebrew-tap" = mikker-homebrew-tap;
             };
           };
 
-          homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
+          homebrew.taps = [
+            "homebrew/homebrew-core"
+            "homebrew/homebrew-cask"
+            "homebrew/homebrew-bundle"
+            "mikker/tap"
+          ];
         })
 
         home-manager.darwinModules.home-manager
