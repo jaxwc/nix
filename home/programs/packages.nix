@@ -25,8 +25,6 @@
       sbarlua
       sketchybar
       sketchybar-app-font
-      llama-cpp
-      claude-code
     ]
     ++ (with pkgs-small; [
       opencode
