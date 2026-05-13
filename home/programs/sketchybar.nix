@@ -7,6 +7,7 @@
   luaPkg = pkgs.sbarlua.luaModule;
   luaVersion = pkgs.lib.versions.majorMinor (pkgs.lib.getVersion luaPkg);
   profileBin = "/etc/profiles/per-user/${user}/bin";
+  systemBin = "/run/current-system/sw/bin";
   homeDir = "/Users/${user}";
   c = theme.colors;
   hex = theme.rawHexValue;
@@ -52,11 +53,13 @@
       --replace "@USER@" "${user}" \
       --replace "@HOME@" "${homeDir}" \
       --replace "@PROFILE_BIN@" "${profileBin}" \
+      --replace "@SYSTEM_BIN@" "${systemBin}" \
       --replace "@LUA_BIN@" "${luaPkg}/bin/lua"
     substituteInPlace "$out/items/spaces.lua" \
       --replace "@USER@" "${user}" \
       --replace "@HOME@" "${homeDir}" \
       --replace "@PROFILE_BIN@" "${profileBin}" \
+      --replace "@SYSTEM_BIN@" "${systemBin}" \
       --replace "@LUA_BIN@" "${luaPkg}/bin/lua"
   '';
 in {

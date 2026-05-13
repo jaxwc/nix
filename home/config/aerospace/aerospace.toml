@@ -69,17 +69,17 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     10
+    inner.horizontal = 8
+    inner.vertical =   8
+    outer.left =       8
+    outer.bottom =     8
     outer.top =        [
 	{monitor."LG ULTRAGEAR+" = 45},
 	{monitor."LG HDR 4k" = 45},
 	{monitor."Sidecar Display" = 45},
-	15,
+	12,
 	]
-    outer.right =      10
+    outer.right =      8
 
 [workspace-to-monitor-force-assignment]
 	1 = 'main'
@@ -147,8 +147,6 @@ on-mode-changed = []
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
-	alt-m = 'workspace m'
-	alt-y = 'workspace y'
 	alt-s = 'workspace s'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -157,8 +155,6 @@ on-mode-changed = []
     alt-shift-3 = 'move-node-to-workspace 3'
     alt-shift-4 = 'move-node-to-workspace 4'
     alt-shift-5 = 'move-node-to-workspace 5'
-    alt-shift-m = 'move-node-to-workspace m'
-    alt-shift-y = 'move-node-to-workspace y'
     alt-shift-s = 'move-node-to-workspace s'
 
     alt-f = 'fullscreen'
@@ -192,25 +188,25 @@ on-mode-changed = []
     alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'ghostty'
-run = ['layout tiling', 'move-node-to-workspace 2']
-    
-[[on-window-detected]]
-if.app-name-regex-substring = 'zen'
-run = ['layout tiling','move-node-to-workspace 1']
+if.app-name-regex-substring = 'safari'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'spotify'
-run = ['layout tiling','move-node-to-workspace s']
+if.app-name-regex-substring = 'ghostty'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'obsidian'
-run = ['layout tiling', 'move-node-to-workspace 3']
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'spotify'
+run = ['layout floating','move-node-to-workspace s']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'messages'
-run = ['layout tiling', 'move-node-to-workspace m']
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
-run = ['layout tiling', 'move-node-to-workspace y']
+run = 'layout floating'

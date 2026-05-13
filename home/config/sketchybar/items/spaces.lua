@@ -7,7 +7,7 @@ local config = {
 	icon_off = "○",
 }
 
-sbar.exec("@PROFILE_BIN@/aerospace list-workspaces --all", function(output)
+sbar.exec("@SYSTEM_BIN@/aerospace list-workspaces --all", function(output)
 	local spaces = {}
 
 	for space_name in output:gmatch("[^\r\n]+") do
@@ -27,7 +27,7 @@ sbar.exec("@PROFILE_BIN@/aerospace list-workspaces --all", function(output)
 				padding_left = 2,
 				padding_right = 2,
 
-				click_script = "@PROFILE_BIN@/aerospace workspace " .. space_name,
+				click_script = "@SYSTEM_BIN@/aerospace workspace " .. space_name,
 			})
 
 			table.insert(spaces, space.name)
