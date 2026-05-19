@@ -147,7 +147,6 @@ on-mode-changed = []
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
-	alt-s = 'workspace s'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -155,7 +154,6 @@ on-mode-changed = []
     alt-shift-3 = 'move-node-to-workspace 3'
     alt-shift-4 = 'move-node-to-workspace 4'
     alt-shift-5 = 'move-node-to-workspace 5'
-    alt-shift-s = 'move-node-to-workspace s'
 
     alt-f = 'fullscreen'
 	alt-shift-space = ['layout floating tiling', 'mode main']
@@ -201,7 +199,7 @@ run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'spotify'
-run = ['layout floating','move-node-to-workspace s']
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'messages'
@@ -217,4 +215,8 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'preview'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = '1password'
 run = 'layout floating'
