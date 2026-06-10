@@ -4,6 +4,7 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     onActivation.cleanup = "zap";
+    onActivation.extraFlags = ["--force-cleanup"];
     brews = [
       "mas"
     ];
