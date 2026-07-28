@@ -2,8 +2,14 @@
   description = "nix-darwin";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Temporary pin until NixOS/nixpkgs#536365 reaches nixos-unstable.
+    nixpkgs.url = "github:nixos/nixpkgs/d407951447dcd00442e97087bf374aad70c04cea";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
+
+    pi-web-access = {
+      url = "github:nicobailon/pi-web-access";
+      flake = false;
+    };
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -37,11 +43,6 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
-
-    mikker-homebrew-tap = {
-      url = "github:mikker/homebrew-tap";
-      flake = false;
-    };
   };
 
   outputs = {
@@ -52,7 +53,7 @@
     homebrew-core,
     homebrew-cask,
     homebrew-bundle,
-    mikker-homebrew-tap,
+    pi-web-access,
     ...
   }: let
     user = "jackson";
@@ -85,7 +86,6 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "homebrew/homebrew-bundle" = homebrew-bundle;
-              "mikker/homebrew-tap" = mikker-homebrew-tap;
             };
           };
 
@@ -93,7 +93,6 @@
             "homebrew/homebrew-core"
             "homebrew/homebrew-cask"
             "homebrew/homebrew-bundle"
-            "mikker/tap"
           ];
         })
 
@@ -101,7 +100,10 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit user theme pkgs-small;};
+          home-manager.extraSpecialArgs = {
+            inherit user theme pkgs-small;
+            piWebAccessSrc = pi-web-access;
+          };
           home-manager.users.${user} = import ./home;
           home-manager.backupFileExtension = "backup";
         }

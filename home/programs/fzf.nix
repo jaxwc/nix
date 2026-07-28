@@ -1,10 +1,14 @@
-{lib, theme, ...}: {
+{
+  lib,
+  theme,
+  ...
+}: {
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
 
     defaultCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
-    fileWidgetCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
+    fileWidget.command = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
 
     colors = {
       "bg+" = theme.colors.bg_visual;
@@ -38,7 +42,7 @@
       "--height=40%"
     ];
 
-    fileWidgetOptions = [
+    fileWidget.options = [
       "--preview=${lib.escapeShellArg "bat --color=always --line-range=:500 {}"}"
     ];
   };

@@ -32,13 +32,13 @@ in {
               <key>caret</key>
               <string>${c.cyan}</string>
               <key>lineHighlight</key>
-              <string>#28176a30</string>
+              <string>${theme.withAlpha theme.transparency.subtle c.bg_highlight}</string>
               <key>selection</key>
-              <string>#6a39dc55</string>
+              <string>${theme.withAlpha theme.transparency.selection c.bg_visual}</string>
               <key>activeGuide</key>
               <string>${c.border}</string>
               <key>gutterForeground</key>
-              <string>#7a72a8aa</string>
+              <string>${theme.withAlpha theme.transparency.muted c.comment}</string>
             </dict>
           </dict>
           <dict>

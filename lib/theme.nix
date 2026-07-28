@@ -1,5 +1,13 @@
 {name ? "spiderverse"}: let
   rawHexValue = color: builtins.substring 1 6 color;
+  withAlpha = alpha: color: "${color}${alpha}";
+  transparency = {
+    color = "#00000000";
+    terminalOpacity = 0.65;
+    subtle = "30";
+    selection = "55";
+    muted = "aa";
+  };
 
   themes = {
     "tokyo-night-storm" = {
@@ -32,6 +40,9 @@
         cyan = "#7dcfff";
         dark3 = "#545c7e";
         dark5 = "#737aa2";
+        diff_add = "#20303b";
+        diff_change = "#252e49";
+        diff_delete = "#37222c";
         error = "#db4b4b";
         fg = "#c0caf5";
         fg_dark = "#a9b1d6";
@@ -87,6 +98,9 @@
         cyan = "#18d8f0";
         dark3 = "#655d92";
         dark5 = "#a198ce";
+        diff_add = "#122e18";
+        diff_change = "#2a235a";
+        diff_delete = "#4a1830";
         error = "#ff4b87";
         fg = "#f1ebff";
         fg_dark = "#d0c7f4";
@@ -115,5 +129,5 @@
   };
 in
   if builtins.hasAttr name themes
-  then themes.${name} // {inherit rawHexValue;}
+  then themes.${name} // {inherit rawHexValue transparency withAlpha;}
   else throw "Unknown theme '${name}'. Available themes: ${builtins.concatStringsSep ", " (builtins.attrNames themes)}"

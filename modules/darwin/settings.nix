@@ -13,10 +13,6 @@
   };
   programs.fish.enable = true;
   environment.shells = [pkgs.fish];
-  environment.systemPackages = with pkgs; [
-    aerospace
-    curl
-  ];
 
   launchd.user.envVariables.PATH = "/etc/profiles/per-user/${user}/bin:/run/current-system/sw/bin:/usr/bin:/bin:/usr/sbin:/sbin";
 

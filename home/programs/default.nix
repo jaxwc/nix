@@ -13,6 +13,7 @@
     ./zoxide.nix
     ./tmux.nix
     ./neovim.nix
+    ./pi.nix
     ./syncthing.nix
     ./packages.nix
     ./ssh.nix

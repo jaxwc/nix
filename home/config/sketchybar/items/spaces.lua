@@ -7,7 +7,7 @@ local config = {
 	icon_off = "○",
 }
 
-sbar.exec("@SYSTEM_BIN@/aerospace list-workspaces --all", function(output)
+sbar.exec("@PROFILE_BIN@/aerospace list-workspaces --all", function(output)
 	local spaces = {}
 
 	for space_name in output:gmatch("[^\r\n]+") do
@@ -27,7 +27,7 @@ sbar.exec("@SYSTEM_BIN@/aerospace list-workspaces --all", function(output)
 				padding_left = 2,
 				padding_right = 2,
 
-				click_script = "@SYSTEM_BIN@/aerospace workspace " .. space_name,
+				click_script = "@PROFILE_BIN@/aerospace workspace " .. space_name,
 			})
 
 			table.insert(spaces, space.name)
@@ -46,8 +46,9 @@ sbar.exec("@SYSTEM_BIN@/aerospace list-workspaces --all", function(output)
 		end
 	end
 
-	sbar.set(spaces[1], { padding_left = settings.paddings })
-	sbar.set(spaces[#spaces], { padding_right = settings.paddings })
-
-	sbar.add("bracket", spaces, {})
+	if #spaces > 0 then
+		sbar.set(spaces[1], { padding_left = settings.paddings })
+		sbar.set(spaces[#spaces], { padding_right = settings.paddings })
+		sbar.add("bracket", spaces, {})
+	end
 end)

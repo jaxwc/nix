@@ -2,6 +2,7 @@
   system.defaults = {
     NSGlobalDomain = {
       AppleICUForce24HourTime = true;
+      AppleInterfaceStyle = "Dark";
       InitialKeyRepeat = 15;
       KeyRepeat = 2;
       NSAutomaticCapitalizationEnabled = false;

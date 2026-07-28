@@ -64,7 +64,7 @@ in {
       set -g @blue "${c.blue}"
       set -g @purple "${c.purple}"
       set -g @magenta "${c.magenta}"
-      set -g @transparent "${theme.transparent}"
+      set -g @transparent "${theme.transparency.color}"
 
       set -g status-left-length 100
       set -g status-left ""

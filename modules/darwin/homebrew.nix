@@ -1,12 +1,13 @@
 {...}: {
   homebrew = {
     enable = true;
-    onActivation.autoUpdate = true;
-    onActivation.upgrade = true;
+    onActivation.autoUpdate = false;
+    onActivation.upgrade = false;
     onActivation.cleanup = "zap";
     onActivation.extraFlags = ["--force-cleanup"];
     brews = [
       "mas"
+      "herdr"
     ];
     masApps = {
       "1Password for Safari" = 1569813296;
@@ -27,7 +28,6 @@
       "sf-symbols"
       "spotify"
       "tailscale-app"
-      "tuna"
     ];
   };
 }

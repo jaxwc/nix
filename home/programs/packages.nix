@@ -1,32 +1,35 @@
-{
-  pkgs,
-  pkgs-small,
-  ...
-}: {
-  home.packages = with pkgs;
-    [
-      alejandra
-      bash
-      eza
-      fd
-      ghostscript
-      imagemagick
-      jankyborders
-      jdk
-      jq
-      lazygit
-      lua5_5
-      luarocks
-      maven
-      nixd
-      nodejs
-      python314
-      ripgrep
-      sbarlua
-      sketchybar
-      sketchybar-app-font
-    ]
-    ++ (with pkgs-small; [
-      opencode
-    ]);
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    aerospace
+    alejandra
+    bash
+    black
+    clang-tools
+    curl
+    eza
+    fd
+    ghostscript
+    google-java-format
+    imagemagick
+    jankyborders
+    jdk
+    jq
+    isort
+    lazygit
+    lua5_5
+    luarocks
+    maven
+    nixd
+    nodejs
+    python314
+    prettier
+    raycast-beta
+    ripgrep
+    sbarlua
+    sketchybar
+    sketchybar-app-font
+    shellcheck
+    shfmt
+    stylua
+  ];
 }

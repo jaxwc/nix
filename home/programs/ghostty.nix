@@ -5,8 +5,8 @@
       font-family = JetBrainsMono Nerd Font
       font-size = 16
       theme = nix-theme
-      background-opacity = 0.65
-      background-blur = true
+      background-opacity = ${toString theme.transparency.terminalOpacity}
+      background-blur = macos-glass-regular
       window-padding-x = 8
       window-padding-y = 8
       window-padding-balance = true
@@ -18,6 +18,8 @@
       macos-option-as-alt = true
       shell-integration-features = no-cursor
       keybind = super+shift+r=reload_config
+      keybind = alt+backspace=text:\x1b\x7f
+      scrollbar = never
     '';
   };
   xdg.configFile."ghostty/themes/nix-theme" = {

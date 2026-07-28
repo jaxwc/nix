@@ -43,6 +43,7 @@
     };
     interactiveShellInit = ''
       set -g fish_greeting
+      fish_add_path --append /opt/homebrew/bin
       fish_vi_key_bindings
       # Force block cursor in all fish vi modes
       set -g fish_cursor_default block

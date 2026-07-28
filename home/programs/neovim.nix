@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  theme,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -12,5 +16,10 @@
   xdg.configFile."nvim" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix/home/config/nvim";
     recursive = true;
+  };
+
+  xdg.configFile."nix-theme/nvim.json".text = builtins.toJSON {
+    inherit (theme) colors;
+    transparent = true;
   };
 }
