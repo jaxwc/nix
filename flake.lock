@@ -3,11 +3,11 @@
     "brew-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1785178164,
-        "narHash": "sha256-zfi+8PNAbUv7pZC0k4ml4FTDOVIFPIIGsb6G+91cscE=",
+        "lastModified": 1787679372,
+        "narHash": "sha256-CnHEHgm0F20upEVWPpzrP2XV4lNyOtbNg1KfqTGVUnM=",
         "owner": "Homebrew",
         "repo": "brew",
-        "rev": "536cb451eeaf0a6aff78f80255a4798d7d2f127f",
+        "rev": "95744101125a9e6921d2988c410791e47c76915c",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785168662,
-        "narHash": "sha256-kGJTc0oEUQuEwV66lSlMxYtOEtpk9N/HS43k+rFAvs8=",
+        "lastModified": 1787680808,
+        "narHash": "sha256-9168tNt0NZdtlx5RM5huEuc9NCWMLACJA9O4UK/l2Zc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cbb77679b3d992c8b62f884cd3a84af534a28621",
+        "rev": "6840c9a8f50722944eb106ce8bb237c138584f2a",
         "type": "github"
       },
       "original": {
@@ -55,11 +55,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1785207531,
-        "narHash": "sha256-WqXg+o5NmnuKwMki/kIso87B6gPkGTKsAsz/uzd/57M=",
+        "lastModified": 1787691024,
+        "narHash": "sha256-ujpg0cKx2kHj6n2u3wC0XCcW8XHpKB1xBiIS/XuLknc=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "101aef9199e1cdc85168240ab65cafc3ab00f6f0",
+        "rev": "f8d349b41b8f0ad5f89f299f3815de1f7c7a68cf",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1785209966,
-        "narHash": "sha256-DbbEkmkbMsPYYnNxU2o/bma3o2ucrFaBKUVE8VFHxj8=",
+        "lastModified": 1787691166,
+        "narHash": "sha256-lHuw3RZeSjMtKiuLuHpNmeoIK5MGRVW5MtC4r0S3wB0=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "f07764500726dc6333b7ca4588450549e704a607",
+        "rev": "8eeb81854c53b526fc957a080c5b7c793e11cd1f",
         "type": "github"
       },
       "original": {
@@ -91,11 +91,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784500460,
-        "narHash": "sha256-UvORnAxTRHax7RG74W8Z2t4GvIkX6AjJ5kk0QlwZomo=",
+        "lastModified": 1786845137,
+        "narHash": "sha256-oQFip+v0luP8NIxJzmiW4Wu8bILsbFWom5l0zonl8hQ=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "57a3171f94705599a2499248ca5758d5eb47c0e0",
+        "rev": "4cff07de74b50e64bdd68cd4e722ab5b6b35ee48",
         "type": "github"
       },
       "original": {
@@ -111,11 +111,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784906761,
-        "narHash": "sha256-2v0H8+Ert+xbm0oliHblXTPPczuKiibBUBvRax59kxg=",
+        "lastModified": 1787330919,
+        "narHash": "sha256-LslMncqN7uOOH5S88WZtO/EVt2HwD8ltUnfyANk+mC0=",
         "owner": "zhaofengli",
         "repo": "nix-homebrew",
-        "rev": "60623ec512406261f553d24033c8a0c53fd0b7f2",
+        "rev": "b00218e4aec0e5bf07d61a0bb13f842faa582d7b",
         "type": "github"
       },
       "original": {
@@ -142,11 +142,11 @@
     },
     "nixpkgs-small": {
       "locked": {
-        "lastModified": 1785152149,
-        "narHash": "sha256-vbH+CBdQn1k5xyEJE0m5In4lEXgZk9sjQHZdxjMgxN8=",
+        "lastModified": 1787673450,
+        "narHash": "sha256-VpX10752K0aIHRedU/tYY3jWr1+4rAx0JU4Hr+b8QQM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "aac3a899cc6ce8d928dfc5818dafc093b7936010",
+        "rev": "103cb3a0b62b1d0a4560d265cdfbc0af064f6767",
         "type": "github"
       },
       "original": {
@@ -159,11 +159,11 @@
     "pi-web-access": {
       "flake": false,
       "locked": {
-        "lastModified": 1785009178,
-        "narHash": "sha256-M3LvILyZU7q+6ZG4pch35aXJLY3xzYTzvsC4E3DZdio=",
+        "lastModified": 1787691452,
+        "narHash": "sha256-ASxQd3OgPTin+LQZQfLfikPGBHu/+B0sKDxjVIlUUDk=",
         "owner": "nicobailon",
         "repo": "pi-web-access",
-        "rev": "58ce1566b5959552cf9e8b9f227b158b199a4975",
+        "rev": "9477b59cd34f57587a72a9b4c17f99390f2abae9",
         "type": "github"
       },
       "original": {

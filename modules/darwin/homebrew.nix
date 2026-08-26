@@ -1,8 +1,8 @@
 {...}: {
   homebrew = {
     enable = true;
-    onActivation.autoUpdate = false;
-    onActivation.upgrade = false;
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
     onActivation.cleanup = "zap";
     onActivation.extraFlags = ["--force-cleanup"];
     brews = [

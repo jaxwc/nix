@@ -23,7 +23,6 @@
     nodejs
     python314
     prettier
-    raycast-beta
     ripgrep
     sbarlua
     sketchybar

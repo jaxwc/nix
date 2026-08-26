@@ -13,6 +13,8 @@
   outOfStore = path: config.lib.file.mkOutOfStoreSymlink "${piConfig}/${path}";
 
   piWebAccessManifest = builtins.fromJSON (builtins.readFile "${piWebAccessSrc}/package.json");
+  # Upstream's lockfile includes peer-package entries without integrity hashes,
+  # which Nix's npm dependency fetcher cannot parse. Use a peer-free lockfile.
   piWebAccessSource = pkgs.runCommand "pi-web-access-source-${piWebAccessManifest.version}" {} ''
     mkdir -p "$out"
     cp -R ${piWebAccessSrc}/. "$out/"
@@ -23,8 +25,8 @@
     pname = "pi-web-access";
     version = piWebAccessManifest.version;
     src = piWebAccessSource;
-    npmDepsHash = "sha256-gcesczWMoZgVHaCR3tWGr55W8pDc9byk8vnsXluGSw4=";
-    npmInstallFlags = ["--omit=peer"];
+    npmDepsHash = "sha256-ys71QL7qol1D+oBHLL11EmgjuLOPkSPk6pGZWg+0ILo=";
+    npmInstallFlags = ["--omit=peer" "--legacy-peer-deps"];
     dontNpmBuild = true;
     installPhase = ''
       runHook preInstall
