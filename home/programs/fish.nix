@@ -27,7 +27,6 @@
       ll = "eza --long --no-filesize --no-user --icons --all --group-directories-first";
       tree = "eza --tree --level=2 --all";
       c = "clear";
-      ta = "tmux attach";
     };
     functions = {
       fn.body = ''

@@ -12,7 +12,6 @@
     ./sketchybar.nix
     ./starship.nix
     ./zoxide.nix
-    ./tmux.nix
     ./neovim.nix
     ./pi.nix
     ./syncthing.nix
