@@ -1,6 +1,6 @@
 import { spawn } from "node:child_process";
-import type { ExtensionAPI, BashOperations, ReadOperations } from "@earendil-works/pi-coding-agent";
-import { createBashTool, createReadTool } from "@earendil-works/pi-coding-agent";
+import type { ExtensionAPI, BashOperations, EditOperations, ReadOperations, WriteOperations } from "@earendil-works/pi-coding-agent";
+import { createBashTool, createEditTool, createReadTool, createWriteTool } from "@earendil-works/pi-coding-agent";
 
 const REMOTE = "jackson@intersect";
 
@@ -72,11 +72,30 @@ function readOps(remote: string, remoteCwd: string, localCwd: string): ReadOpera
   };
 }
 
-function bashOps(remote: string, remoteCwd: string, localCwd: string): BashOperations {
+function writeOps(remote: string, remoteCwd: string, localCwd: string): WriteOperations {
+  const remotePath = (path: string) => path.startsWith(localCwd) ? remoteCwd + path.slice(localCwd.length) : path;
+  return {
+    writeFile: async (path, content) => {
+      const encoded = Buffer.from(content).toString("base64");
+      await ssh(remote, `printf %s ${JSON.stringify(encoded)} | base64 -d > ${JSON.stringify(remotePath(path))}`);
+    },
+    mkdir: (path) => ssh(remote, `mkdir -p ${JSON.stringify(remotePath(path))}`).then(() => undefined),
+  };
+}
+
+function editOps(remote: string, remoteCwd: string, localCwd: string): EditOperations {
+  const read = readOps(remote, remoteCwd, localCwd);
+  const write = writeOps(remote, remoteCwd, localCwd);
+  return { readFile: read.readFile, access: read.access, writeFile: write.writeFile };
+}
+
+function bashOps(remote: string, remoteCwd: string, localCwd: string, readOnly: boolean): BashOperations {
   const remotePath = (path: string) => path.startsWith(localCwd) ? remoteCwd + path.slice(localCwd.length) : path;
   return {
     exec: (command, cwd, { onData, signal, timeout }) => new Promise((resolve, reject) => {
-      try { assertReadOnly(command); } catch (error) { reject(error); return; }
+      if (readOnly) {
+        try { assertReadOnly(command); } catch (error) { reject(error); return; }
+      }
       const child = spawn("ssh", ["-o", "BatchMode=yes", remote, `cd ${JSON.stringify(remotePath(cwd))} && ${command}`], {
         stdio: ["ignore", "pipe", "pipe"],
       });
@@ -101,34 +120,52 @@ function bashOps(remote: string, remoteCwd: string, localCwd: string): BashOpera
 export default function (pi: ExtensionAPI) {
   const localCwd = process.cwd();
   const localRead = createReadTool(localCwd);
+  const localWrite = createWriteTool(localCwd);
+  const localEdit = createEditTool(localCwd);
   const localBash = createBashTool(localCwd);
-  let connected = false;
+  let mode: "read-only" | "write" | undefined;
   let remoteCwd = "";
   let previousTools: string[] | undefined;
 
   pi.registerTool({
     ...localRead,
     async execute(id, params, signal, onUpdate) {
-      if (!connected) return localRead.execute(id, params, signal, onUpdate);
+      if (!mode) return localRead.execute(id, params, signal, onUpdate);
       return createReadTool(localCwd, { operations: readOps(REMOTE, remoteCwd, localCwd) }).execute(id, params, signal, onUpdate);
+    },
+  });
+
+  pi.registerTool({
+    ...localWrite,
+    async execute(id, params, signal, onUpdate) {
+      if (mode !== "write") return localWrite.execute(id, params, signal, onUpdate);
+      return createWriteTool(localCwd, { operations: writeOps(REMOTE, remoteCwd, localCwd) }).execute(id, params, signal, onUpdate);
+    },
+  });
+
+  pi.registerTool({
+    ...localEdit,
+    async execute(id, params, signal, onUpdate) {
+      if (mode !== "write") return localEdit.execute(id, params, signal, onUpdate);
+      return createEditTool(localCwd, { operations: editOps(REMOTE, remoteCwd, localCwd) }).execute(id, params, signal, onUpdate);
     },
   });
 
   pi.registerTool({
     ...localBash,
     async execute(id, params, signal, onUpdate) {
-      if (!connected) return localBash.execute(id, params, signal, onUpdate);
-      return createBashTool(localCwd, { operations: bashOps(REMOTE, remoteCwd, localCwd) }).execute(id, params, signal, onUpdate);
+      if (!mode) return localBash.execute(id, params, signal, onUpdate);
+      return createBashTool(localCwd, { operations: bashOps(REMOTE, remoteCwd, localCwd, mode === "read-only") }).execute(id, params, signal, onUpdate);
     },
   });
 
   pi.registerCommand("server-connect", {
     description: `Connect read-only tools to ${REMOTE}`,
     handler: async (_args, ctx) => {
-      if (connected) return ctx.ui.notify(`Already connected to ${REMOTE}:${remoteCwd}`, "info");
+      if (mode) return ctx.ui.notify(`Already connected (${mode}) to ${REMOTE}:${remoteCwd}`, "info");
       try {
         remoteCwd = (await ssh(REMOTE, "pwd")).toString().trim();
-        connected = true;
+        mode = "read-only";
         previousTools = pi.getActiveTools();
         pi.setActiveTools(previousTools.filter((name) => !["edit", "write", "ls", "find", "grep"].includes(name)));
         ctx.ui.setStatus("server-ssh", ctx.ui.theme.fg("accent", `SSH RO: ${REMOTE}`));
@@ -139,15 +176,32 @@ export default function (pi: ExtensionAPI) {
     },
   });
 
+  pi.registerCommand("server-connect-write", {
+    description: `Connect read, write, edit, and bash tools to ${REMOTE}`,
+    handler: async (_args, ctx) => {
+      if (mode) return ctx.ui.notify(`Already connected (${mode}) to ${REMOTE}:${remoteCwd}`, "info");
+      try {
+        remoteCwd = (await ssh(REMOTE, "pwd")).toString().trim();
+        mode = "write";
+        previousTools = pi.getActiveTools();
+        pi.setActiveTools(Array.from(new Set([...previousTools, "read", "write", "edit", "bash"])));
+        ctx.ui.setStatus("server-ssh", ctx.ui.theme.fg("warning", `SSH RW: ${REMOTE}`));
+        ctx.ui.notify(`Connected with write access to ${REMOTE}:${remoteCwd}`, "warning");
+      } catch (error) {
+        ctx.ui.notify(error instanceof Error ? error.message : String(error), "error");
+      }
+    },
+  });
+
   pi.registerCommand("server-disconnect", {
     description: "Disconnect SSH tools and restore local tools",
     handler: async (_args, ctx) => {
-      connected = false;
+      mode = undefined;
       remoteCwd = "";
       if (previousTools) pi.setActiveTools(previousTools);
       previousTools = undefined;
       ctx.ui.setStatus("server-ssh", undefined);
-      ctx.ui.notify(`Disconnected from ${REMOTE}; read and bash are local at ${localCwd}`, "info");
+      ctx.ui.notify(`Disconnected from ${REMOTE}; tools are local at ${localCwd}`, "info");
     },
   });
 
@@ -155,18 +209,20 @@ export default function (pi: ExtensionAPI) {
     description: "Show whether tools are local or connected over SSH",
     handler: async (_args, ctx) => {
       ctx.ui.notify(
-        connected ? `SSH read-only: ${REMOTE}:${remoteCwd}` : `Local: ${localCwd}`,
+        mode ? `SSH ${mode}: ${REMOTE}:${remoteCwd}` : `Local: ${localCwd}`,
         "info",
       );
     },
   });
 
-  pi.on("user_bash", () => connected ? { operations: bashOps(REMOTE, remoteCwd, localCwd) } : undefined);
+  pi.on("user_bash", () => mode ? { operations: bashOps(REMOTE, remoteCwd, localCwd, mode === "read-only") } : undefined);
 
   pi.on("before_agent_start", (event) => {
-    const mode = connected
+    const modePrompt = mode === "read-only"
       ? `SERVER SSH MODE (authoritative current state): Connected read-only to ${REMOTE}. The working directory maps to ${remoteCwd}. read and bash operate remotely. edit/write and local discovery tools are disabled. sudo and mutating commands are prohibited. Clearly state that observations come from the remote server.`
-      : `LOCAL MODE (authoritative current state): SSH is disconnected. All tools and paths operate on the local machine at ${localCwd}. Ignore any older conversation statements claiming SSH mode is active.`;
-    return { systemPrompt: event.systemPrompt + `\n\n${mode}` };
+      : mode === "write"
+        ? `SERVER SSH MODE (authoritative current state): Connected with write access to ${REMOTE}. The working directory maps to ${remoteCwd}. read, write, edit, bash, and user shell commands operate remotely. Changes affect the remote server. Clearly state that operations are occurring on the remote server.`
+        : `LOCAL MODE (authoritative current state): SSH is disconnected. All tools and paths operate on the local machine at ${localCwd}. Ignore any older conversation statements claiming SSH mode is active.`;
+    return { systemPrompt: event.systemPrompt + `\n\n${modePrompt}` };
   });
 }

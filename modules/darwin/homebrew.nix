@@ -12,6 +12,7 @@
     masApps = {
       "1Password for Safari" = 1569813296;
       "Obsidian Web Clipper" = 6720708363;
+      "Microsoft PowerPoint" = 462062816;
       "wBlock" = 6746388723;
     };
     casks = [

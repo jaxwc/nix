@@ -6,6 +6,7 @@
     ./bat.nix
     ./btop.nix
     ./ghostty.nix
+    ./herdr.nix
     ./gh.nix
     ./aerospace.nix
     ./sketchybar.nix

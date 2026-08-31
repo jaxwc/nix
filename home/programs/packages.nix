@@ -30,5 +30,6 @@
     shellcheck
     shfmt
     stylua
+    tree-sitter
   ];
 }
