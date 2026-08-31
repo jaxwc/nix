@@ -26,6 +26,7 @@
       "jellyfin-media-player"
       "obsidian"
       "protonvpn"
+      "raycast"
       "sf-symbols"
       "spotify"
       "tailscale-app"
