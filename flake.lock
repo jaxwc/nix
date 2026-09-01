@@ -16,22 +16,6 @@
         "type": "github"
       }
     },
-    "crmne-tap": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1788162695,
-        "narHash": "sha256-211Tsg2mYNtBfxa1k+U6pTnldR/vFL7+CAYRqffr6+E=",
-        "owner": "crmne",
-        "repo": "homebrew-tap",
-        "rev": "d39191577d9db373f53e7594b94da0f1845a35b9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "crmne",
-        "repo": "homebrew-tap",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -191,7 +175,6 @@
     "root": {
       "inputs": {
         "brew-src": "brew-src",
-        "crmne-tap": "crmne-tap",
         "home-manager": "home-manager",
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
