@@ -23,14 +23,12 @@
       "font-jetbrains-mono-nerd-font"
       "font-sf-pro"
       "ghostty"
-      "jellyfin-media-player"
       "obsidian"
       "protonvpn"
       "raycast"
       "sf-symbols"
       "spotify"
       "tailscale-app"
-      "t3-code@nightly"
     ];
   };
 }
