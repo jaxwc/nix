@@ -25,5 +25,17 @@ lib.mkIf pkgs.stdenv.isDarwin {
       HostName = "github.com";
       User = "git";
     };
+    settings."intersect" = {
+      HostName = "intersect";
+      User = "jackson";
+      Port = 22;
+      IdentityFile = "~/.ssh/intersect.pub";
+      IdentitiesOnly = true;
+      ForwardAgent = false;
+    };
   };
+
+  home.file.".ssh/intersect.pub".text = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ/YY33gy1VKT1WV192IycMRCuQZLnumqFqtVt0TpyIl Intersect SSH Key
+  '';
 }

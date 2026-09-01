@@ -43,6 +43,10 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    crmne-tap = {
+      url = "github:crmne/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -53,6 +57,7 @@
     homebrew-core,
     homebrew-cask,
     homebrew-bundle,
+    crmne-tap,
     pi-web-access,
     ...
   }: let
@@ -86,6 +91,7 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "homebrew/homebrew-bundle" = homebrew-bundle;
+              "crmne/homebrew-tap" = crmne-tap;
             };
           };
 
@@ -93,6 +99,7 @@
             "homebrew/homebrew-core"
             "homebrew/homebrew-cask"
             "homebrew/homebrew-bundle"
+            "crmne/homebrew-tap"
           ];
         })
 

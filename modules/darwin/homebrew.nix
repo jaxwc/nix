@@ -18,6 +18,7 @@
     casks = [
       "1password@beta"
       "cleanshot"
+      "crmne/tap/fastpotify"
       "fantastical"
       "font-hack-nerd-font"
       "font-jetbrains-mono-nerd-font"

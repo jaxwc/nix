@@ -6,6 +6,7 @@
     black
     clang-tools
     curl
+    eslint_d
     eza
     fd
     ghostscript
@@ -21,8 +22,10 @@
     maven
     nixd
     nodejs
+    pyright
     python314
     prettier
+    pylint
     ripgrep
     sbarlua
     sketchybar
@@ -31,5 +34,13 @@
     shfmt
     stylua
     tree-sitter
+    typescript-language-server
+    vscode-langservers-extracted
+    tailwindcss-language-server
+    lua-language-server
+    graphql-language-service-cli
+    yaml-language-server
+    bash-language-server
+    jdt-language-server
   ];
 }

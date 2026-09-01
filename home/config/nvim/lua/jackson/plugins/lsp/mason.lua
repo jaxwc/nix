@@ -1,9 +1,9 @@
 return {
 	{
-		"williamboman/mason-lspconfig.nvim",
-		opts = {
-			-- list of servers for mason to install
-			ensure_installed = {
+		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			local servers = {
 				"ts_ls",
 				"html",
 				"cssls",
@@ -17,41 +17,11 @@ return {
 				"jsonls",
 				"yamlls",
 				"bashls",
-			},
-		},
-		dependencies = {
-			{
-				"williamboman/mason.nvim",
-				opts = {
-					ui = {
-						icons = {
-							package_installed = "✓",
-							package_pending = "➜",
-							package_uninstalled = "✗",
-						},
-					},
-				},
-			},
-			"neovim/nvim-lspconfig",
-		},
-	},
-	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		opts = {
-			ensure_installed = {
-				"prettier",
-				"stylua",
-				"isort",
-				"black",
-				"pylint",
-				"eslint_d",
-				"clang-format",
-				"google-java-format",
-				"shfmt",
-			},
-		},
-		dependencies = {
-			"williamboman/mason.nvim",
-		},
+			}
+
+			for _, server in ipairs(servers) do
+				vim.lsp.enable(server)
+			end
+		end,
 	},
 }
