@@ -12,28 +12,8 @@
   piWebAccessPath = "${config.home.homeDirectory}/.pi/agent/packages/pi-web-access";
   outOfStore = path: config.lib.file.mkOutOfStoreSymlink "${piConfig}/${path}";
 
-  piWebAccessManifest = builtins.fromJSON (builtins.readFile "${piWebAccessSrc}/package.json");
-  # Upstream's lockfile includes peer-package entries without integrity hashes,
-  # which Nix's npm dependency fetcher cannot parse. Use a peer-free lockfile.
-  piWebAccessSource = pkgs.runCommand "pi-web-access-source-${piWebAccessManifest.version}" {} ''
-    mkdir -p "$out"
-    cp -R ${piWebAccessSrc}/. "$out/"
-    chmod -R u+w "$out"
-    cp ${../packages/pi-web-access/package-lock.json} "$out/package-lock.json"
-  '';
-  piWebAccess = pkgs.buildNpmPackage {
-    pname = "pi-web-access";
-    version = piWebAccessManifest.version;
-    src = piWebAccessSource;
-    npmDepsHash = "sha256-ys71QL7qol1D+oBHLL11EmgjuLOPkSPk6pGZWg+0ILo=";
-    npmInstallFlags = ["--omit=peer" "--legacy-peer-deps"];
-    dontNpmBuild = true;
-    installPhase = ''
-      runHook preInstall
-      mkdir -p "$out"
-      cp -R . "$out/"
-      runHook postInstall
-    '';
+  piWebAccess = pkgs.callPackage ../../packages/pi-web-access {
+    src = piWebAccessSrc;
   };
 
   piTheme = {
@@ -107,6 +87,7 @@
   };
 in {
   home.packages = [pkgs-small.pi-coding-agent];
+  home.sessionVariables.PI_SKIP_VERSION_CHECK = "1";
 
   home.file = {
     ".pi/agent/AGENTS.md".source = outOfStore "AGENTS.md";
