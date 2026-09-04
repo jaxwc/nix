@@ -2,8 +2,7 @@
   description = "nix-darwin";
 
   inputs = {
-    # Temporary pin until NixOS/nixpkgs#536365 reaches nixos-unstable.
-    nixpkgs.url = "github:nixos/nixpkgs/d407951447dcd00442e97087bf374aad70c04cea";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
     pi-web-access = {
