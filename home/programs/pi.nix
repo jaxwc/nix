@@ -3,18 +3,15 @@
   lib,
   pkgs,
   pkgs-small,
-  piWebAccessSrc,
   theme,
   ...
 }: let
   c = theme.colors;
   piConfig = "${config.home.homeDirectory}/.config/nix/home/config/pi";
-  piWebAccessPath = "${config.home.homeDirectory}/.pi/agent/packages/pi-web-access";
+  # Pi installs these pinned releases; Nix owns the declarations, not its npm cache.
+  piWebAccessPackage = "npm:pi-web-access@0.32.0";
+  piAnthropicAuthPackage = "npm:@gotgenes/pi-anthropic-auth@3.3.2";
   outOfStore = path: config.lib.file.mkOutOfStoreSymlink "${piConfig}/${path}";
-
-  piWebAccess = pkgs.callPackage ../../packages/pi-web-access {
-    src = piWebAccessSrc;
-  };
 
   piTheme = {
     "$schema" = "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json";
@@ -92,14 +89,16 @@ in {
   home.file = {
     ".pi/agent/AGENTS.md".source = outOfStore "AGENTS.md";
     ".pi/agent/skills/meal-planner".source = outOfStore "skills/meal-planner";
-    ".pi/agent/packages/pi-web-access".source = piWebAccess;
     ".pi/agent/extensions/spiderverse-ui.ts".source =
       outOfStore "extensions/spiderverse-ui.ts";
     ".pi/agent/extensions/copy-all.ts".source =
       outOfStore "extensions/copy-all.ts";
     ".pi/agent/extensions/ask-user.ts".source =
       outOfStore "extensions/ask-user.ts";
-    ".pi/agent/extensions/btw.ts".source = outOfStore "extensions/btw.ts";
+    ".pi/agent/extensions/herdr-agent-state.ts" = {
+      source = ../config/pi/extensions/herdr-agent-state.ts;
+      force = true;
+    };
     ".pi/agent/extensions/codex-usage.ts".source =
       outOfStore "extensions/codex-usage.ts";
     ".pi/agent/extensions/server-ssh.ts".source =
@@ -127,13 +126,14 @@ in {
       printf '{}\n' > "$source"
     fi
     target=$(mktemp)
-    ${pkgs.jq}/bin/jq --arg piWebAccess "${piWebAccessPath}" '
+    ${pkgs.jq}/bin/jq --arg piWebAccess "${piWebAccessPackage}" \
+      --arg piAnthropicAuth "${piAnthropicAuthPackage}" '
       def packageSource: if type == "string" then . else (.source // "") end;
       . + {
       theme: "spiderverse",
-      defaultProvider: "openai-codex",
-      defaultModel: "gpt-5.6-sol",
-      defaultThinkingLevel: "low",
+      defaultProvider: "anthropic",
+      defaultModel: "claude-opus-5-5",
+      defaultThinkingLevel: "medium",
       defaultProjectTrust: "ask",
       compaction: {
         enabled: true,
@@ -141,21 +141,19 @@ in {
         keepRecentTokens: 30000
       }
     }
-    | del(.powerline)
     | .packages = (
         ((.packages // []) | map(select(
           packageSource
           | (
-              contains("-pi-web-access-")
-              or endswith("/pi-web-access")
-              or startswith("npm:pi-web-access")
-              or contains("nicobailon/pi-web-access")
-              or startswith("npm:pi-powerline-footer")
-              or contains("nicobailon/pi-powerline-footer")
+              startswith("npm:pi-web-access")
+              or startswith("npm:@gotgenes/pi-anthropic-auth")
             )
           | not
         )))
-        + [{source: $piWebAccess, skills: []}]
+        + [
+            {source: $piWebAccess, skills: []},
+            {source: $piAnthropicAuth, skills: []}
+          ]
       )
     ' "$source" > "$target"
     install -m 600 "$target" "$settings"

@@ -5,11 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
-    pi-web-access = {
-      url = "github:nicobailon/pi-web-access";
-      flake = false;
-    };
-
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +37,10 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    homebrew-tinycast = {
+      url = "github:abue-ammar/homebrew-tinycast";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -52,7 +51,7 @@
     homebrew-core,
     homebrew-cask,
     homebrew-bundle,
-    pi-web-access,
+    homebrew-tinycast,
     ...
   }: let
     user = "jackson";
@@ -85,6 +84,7 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "homebrew/homebrew-bundle" = homebrew-bundle;
+              "abue-ammar/homebrew-tinycast" = homebrew-tinycast;
             };
           };
 
@@ -92,6 +92,10 @@
             "homebrew/homebrew-core"
             "homebrew/homebrew-cask"
             "homebrew/homebrew-bundle"
+            {
+              name = "abue-ammar/homebrew-tinycast";
+              trusted = true;
+            }
           ];
         })
 
@@ -101,7 +105,6 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             inherit user theme pkgs-small;
-            piWebAccessSrc = pi-web-access;
           };
           home-manager.users.${user} = import ./home;
           home-manager.backupFileExtension = "backup";

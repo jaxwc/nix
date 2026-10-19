@@ -15,6 +15,7 @@ local languages = {
 	"toml",
 	"yaml",
 	"java",
+	"sql",
 }
 
 return {
@@ -45,6 +46,7 @@ return {
 					"toml",
 					"yaml",
 					"java",
+					"sql",
 				},
 				callback = function()
 					vim.treesitter.start()

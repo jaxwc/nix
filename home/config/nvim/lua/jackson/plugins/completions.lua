@@ -40,6 +40,15 @@ return {
           { name = "buffer" },
         }),
       })
+
+      cmp.setup.filetype({ "sql", "mysql" }, {
+        sources = cmp.config.sources({
+          { name = "vim-dadbod-completion" },
+          { name = "luasnip" },
+        }, {
+          { name = "buffer" },
+        }),
+      })
     end,
   },
 }

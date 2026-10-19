@@ -32,6 +32,7 @@
     sketchybar-app-font
     shellcheck
     shfmt
+    sql-formatter
     stylua
     tree-sitter
     typescript-language-server
@@ -42,5 +43,6 @@
     yaml-language-server
     bash-language-server
     jdt-language-server
+    claude-code
   ];
 }

@@ -29,6 +29,20 @@ return {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			nix = { "alejandra" },
+			sql = { "sql_formatter" },
+			mysql = { "sql_formatter" },
+		},
+		formatters = {
+			sql_formatter = {
+				prepend_args = {
+					"-c",
+					vim.json.encode({
+						language = "mysql",
+						keywordCase = "upper",
+						expressionWidth = 80,
+					}),
+				},
+			},
 		},
 		format_on_save = {
 			timeout_ms = 3000,
