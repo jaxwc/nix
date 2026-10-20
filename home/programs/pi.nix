@@ -95,10 +95,6 @@ in {
       outOfStore "extensions/copy-all.ts";
     ".pi/agent/extensions/ask-user.ts".source =
       outOfStore "extensions/ask-user.ts";
-    ".pi/agent/extensions/herdr-agent-state.ts" = {
-      source = ../config/pi/extensions/herdr-agent-state.ts;
-      force = true;
-    };
     ".pi/agent/extensions/codex-usage.ts".source =
       outOfStore "extensions/codex-usage.ts";
     ".pi/agent/extensions/server-ssh.ts".source =

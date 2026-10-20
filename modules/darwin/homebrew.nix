@@ -7,7 +7,6 @@
     onActivation.extraFlags = ["--force-cleanup"];
     brews = [
       "mas"
-      "herdr"
       "mysql"
     ];
     masApps = {
