@@ -126,6 +126,65 @@
         warning = "#ffe066";
       };
     };
+
+    # From Rex's built-in "Saffron Nightfall" (themes.json); extra shades derived from its ANSI palette
+    "saffron-nightfall" = {
+      name = "saffron_nightfall";
+      transparent = "#00000000";
+
+      colors = {
+        bg = "#131320";
+        bg_dark = "#0f0f1a";
+        bg_dark1 = "#0b0b14";
+        bg_float = "#1a1a2a";
+        bg_highlight = "#1e1e30";
+        bg_popup = "#1a1a2a";
+        bg_search = "#4a4870";
+        bg_sidebar = "#0f0f1a";
+        bg_statusline = "#0f0f1a";
+        bg_visual = "#33324e";
+        black = "#1e1e30";
+        blue = "#7d8fd0";
+        blue0 = "#4a5590";
+        blue1 = "#93cfc5";
+        blue2 = "#76b7ad";
+        blue5 = "#98a9e0";
+        blue6 = "#c4cef0";
+        blue7 = "#2e3558";
+        border = "#1e1e30";
+        border_highlight = "#ffc247";
+        comment = "#625f72";
+        cyan = "#76b7ad";
+        dark3 = "#4a4860";
+        dark5 = "#8a8698";
+        diff_add = "#1f2a1e";
+        diff_change = "#22243a";
+        diff_delete = "#33201f";
+        error = "#e0705f";
+        fg = "#d9d4c8";
+        fg_dark = "#b7b2a5";
+        fg_float = "#f1ecdf";
+        fg_gutter = "#33324e";
+        fg_sidebar = "#b7b2a5";
+        red = "#e0705f";
+        red1 = "#ee8b7a";
+        orange = "#f0955a";
+        yellow = "#ffc247";
+        green = "#9cb56b";
+        green1 = "#b6cc87";
+        green2 = "#7d9552";
+        hint = "#76b7ad";
+        info = "#7d8fd0";
+        magenta = "#d0a3d3";
+        magenta2 = "#bb87c0";
+        none = "NONE";
+        purple = "#bb87c0";
+        teal = "#93cfc5";
+        terminal_black = "#625f72";
+        todo = "#7d8fd0";
+        warning = "#ffc247";
+      };
+    };
   };
 in
   if builtins.hasAttr name themes

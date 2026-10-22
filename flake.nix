@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -44,7 +43,6 @@
   };
 
   outputs = {
-    nixpkgs-small,
     nix-darwin,
     home-manager,
     nix-homebrew,
@@ -56,12 +54,8 @@
   }: let
     user = "jackson";
     hostname = "Jacksons-MacBook-Pro";
-    themeName = "spiderverse";
+    themeName = "saffron-nightfall";
     theme = import ./lib/theme.nix {name = themeName;};
-    pkgs-small = import nixpkgs-small {
-      system = "aarch64-darwin";
-      config.allowUnfree = true;
-    };
   in {
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit user hostname theme;};
@@ -104,7 +98,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
-            inherit user theme pkgs-small;
+            inherit user theme;
           };
           home-manager.users.${user} = import ./home;
           home-manager.backupFileExtension = "backup";

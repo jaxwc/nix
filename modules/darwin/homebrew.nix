@@ -35,7 +35,6 @@
       "codex"
       "orbstack"
       "tinycast"
-      "chatgpt"
     ];
   };
 }

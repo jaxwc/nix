@@ -12,7 +12,7 @@ bind("c", "client.tab.new")
 bind("n", "client.tab.next")
 bind("p", "client.tab.previous")
 bind(",", "client.tab.rename")
-bind("shift+7", "client.tab.close") -- prefix &
+bind("w", "client.tab.close")
 bind("shift+,", "client.tab.move.backward") -- prefix <
 bind("shift+.", "client.tab.move.forward") -- prefix >
 for i = 1, 9 do
@@ -42,7 +42,7 @@ bind("shift+[", "pane.move", { direction = "left" }) -- prefix {
 bind("shift+]", "pane.move", { direction = "right" }) -- prefix }
 bind("shift+1", "pane.move_to_new_tab") -- prefix ! (break-pane)
 
--- resize mode (tmux bind -r): prefix R, then hjkl; esc/enter to leave
+-- resize mode (tmux bind -r): prefix R, then hjkl; enter (or esc, built in) to leave
 rex.mode("resize", { exclusive = true })
 bind("shift+r", "client.mode.enter", { name = "resize" })
 for key, dir in pairs({ h = "left", j = "down", k = "up", l = "right" }) do
