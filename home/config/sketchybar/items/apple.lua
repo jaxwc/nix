@@ -6,7 +6,7 @@ local apple = sbar.add("item", "apple", {
 	position = "left",
 	icon = {
 		string = icons.apple,
-		color = colors.cyan,
+		color = colors.white,
 
 		font = {
 			size = 14.0,

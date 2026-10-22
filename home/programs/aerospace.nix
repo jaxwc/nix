@@ -5,8 +5,9 @@
 }: let
   profileBin = "/etc/profiles/per-user/${user}/bin";
   hex = theme.rawHexValue;
-  activeBorderColor = "0xff${hex theme.colors.border_highlight}";
-  inactiveBorderColor = "0xff${hex theme.colors.comment}";
+  # Keep in sync with sketchybar's space colors (muted = active, dim = inactive)
+  activeBorderColor = "0xff${hex theme.colors.dark5}";
+  inactiveBorderColor = "0xff${hex theme.colors.dark3}";
 in {
   home.file.".aerospace.toml".text =
     builtins.replaceStrings

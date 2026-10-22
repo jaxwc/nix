@@ -16,7 +16,7 @@ sbar.exec("@PROFILE_BIN@/aerospace list-workspaces --all", function(output)
 				icon = {
 					font = { size = 20.0 },
 					string = config.icon_off,
-					color = colors.grey,
+					color = colors.dim,
 
 					width = 20,
 					align = "center",
@@ -38,7 +38,7 @@ sbar.exec("@PROFILE_BIN@/aerospace list-workspaces --all", function(output)
 					space:set({
 						icon = {
 							string = selected and config.icon_on or config.icon_off,
-							color = selected and colors.cyan or colors.grey,
+							color = selected and colors.muted or colors.dim,
 						},
 					})
 				end)

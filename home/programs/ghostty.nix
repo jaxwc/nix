@@ -26,10 +26,10 @@
     text = ''
       foreground = ${theme.colors.fg}
       background = ${theme.colors.bg}
-      cursor-color = ${theme.colors.cyan}
+      cursor-color = ${theme.colors.accent}
       cursor-text = ${theme.colors.bg}
-      selection-foreground = ${theme.colors.fg}
-      selection-background = ${theme.colors.bg_highlight}
+      selection-foreground = ${theme.colors.fg_float}
+      selection-background = ${theme.colors.bg_visual}
       search-foreground = ${theme.colors.bg}
       search-background = ${theme.colors.yellow}
       search-selected-foreground = ${theme.colors.bg}
@@ -47,11 +47,11 @@
       palette = 8=${theme.colors.terminal_black}
       palette = 9=${theme.colors.red1}
       palette = 10=${theme.colors.green1}
-      palette = 11=${theme.colors.yellow}
+      palette = 11=${theme.colors.yellow1 or theme.colors.yellow}
       palette = 12=${theme.colors.blue1}
       palette = 13=${theme.colors.purple}
       palette = 14=${theme.colors.blue5}
-      palette = 15=${theme.colors.fg}
+      palette = 15=${theme.colors.fg_float}
     '';
   };
 }

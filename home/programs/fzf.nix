@@ -21,14 +21,14 @@
       hl = theme.colors.blue1;
       "hl+" = theme.colors.blue1;
       info = theme.colors.dark3;
-      marker = theme.colors.magenta2;
-      pointer = theme.colors.magenta2;
+      marker = theme.colors.accent;
+      pointer = theme.colors.accent;
       prompt = theme.colors.blue1;
       query = theme.colors.fg;
       scrollbar = theme.colors.border_highlight;
       "selected-bg" = theme.colors.bg_visual;
       separator = theme.colors.orange;
-      spinner = theme.colors.magenta2;
+      spinner = theme.colors.accent;
     };
 
     defaultOptions = [

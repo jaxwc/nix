@@ -16,6 +16,7 @@ return {
 		local cyan, blue, blue0, blue1 = c.cyan, c.blue, c.blue0, c.blue1
 		local blue2, blue5, blue6, blue7 = c.blue2, c.blue5, c.blue6, c.blue7
 		local magenta, magenta2, purple, teal = c.magenta, c.magenta2, c.purple, c.teal
+		local accent = c.accent or cyan
 
 		require("tokyonight").setup({
 			style = "storm",
@@ -110,7 +111,7 @@ return {
 					green = green,
 					green_bright = green1,
 					yellow = yellow,
-					yellow_bright = yellow,
+					yellow_bright = c.yellow1 or yellow,
 					blue = blue,
 					blue_bright = blue1,
 					magenta = magenta,
@@ -118,7 +119,7 @@ return {
 					cyan = cyan,
 					cyan_bright = blue5,
 					white = fg_dark,
-					white_bright = fg,
+					white_bright = c.fg_float or fg,
 				}
 			end,
 			on_highlights = function(hl, c)
@@ -128,8 +129,8 @@ return {
 
 				hl.Pmenu = { bg = transparent and c.none or bg_popup, fg = fg }
 				hl.PmenuMatch = { bg = transparent and c.none or bg_popup, fg = blue1 }
-				hl.PmenuSel = { bg = bg_highlight, fg = cyan, bold = true }
-				hl.PmenuMatchSel = { bg = bg_highlight, fg = blue1, bold = true }
+				hl.PmenuSel = { bg = bg_visual, fg = accent, bold = true }
+				hl.PmenuMatchSel = { bg = bg_visual, fg = blue1, bold = true }
 				hl.PmenuSbar = { bg = transparent and c.none or bg_popup }
 				hl.PmenuThumb = { bg = purple }
 

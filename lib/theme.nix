@@ -1,4 +1,4 @@
-{name ? "spiderverse"}: let
+{name ? "saffron-nightfall"}: let
   rawHexValue = color: builtins.substring 1 6 color;
   withAlpha = alpha: color: "${color}${alpha}";
   transparency = {
@@ -16,6 +16,7 @@
       transparent = "#00000000";
 
       colors = {
+        accent = "#7dcfff";
         bg = "#24283b";
         bg_dark = "#1f2335";
         bg_dark1 = "#1b1e2d";
@@ -74,6 +75,7 @@
       transparent = "#00000000";
 
       colors = {
+        accent = "#18d8f0";
         bg = "#07060e";
         bg_dark = "#050409";
         bg_dark1 = "#030308";
@@ -127,62 +129,65 @@
       };
     };
 
-    # From Rex's built-in "Saffron Nightfall" (themes.json); extra shades derived from its ANSI palette
+    # Rex's built-in "Saffron Nightfall" (Rex Beta.app themes.json): ANSI colors, semantic UI
+    # colors (canvas, surfaces, strokes, containers), and its 256-color palette for extra shades.
     "saffron-nightfall" = {
       name = "saffron_nightfall";
       transparent = "#00000000";
 
       colors = {
-        bg = "#131320";
-        bg_dark = "#0f0f1a";
-        bg_dark1 = "#0b0b14";
-        bg_float = "#1a1a2a";
-        bg_highlight = "#1e1e30";
-        bg_popup = "#1a1a2a";
-        bg_search = "#4a4870";
-        bg_sidebar = "#0f0f1a";
-        bg_statusline = "#0f0f1a";
-        bg_visual = "#33324e";
-        black = "#1e1e30";
-        blue = "#7d8fd0";
-        blue0 = "#4a5590";
-        blue1 = "#93cfc5";
-        blue2 = "#76b7ad";
-        blue5 = "#98a9e0";
-        blue6 = "#c4cef0";
-        blue7 = "#2e3558";
-        border = "#1e1e30";
-        border_highlight = "#ffc247";
-        comment = "#625f72";
-        cyan = "#76b7ad";
-        dark3 = "#4a4860";
-        dark5 = "#8a8698";
-        diff_add = "#1f2a1e";
-        diff_change = "#22243a";
-        diff_delete = "#33201f";
-        error = "#e0705f";
-        fg = "#d9d4c8";
-        fg_dark = "#b7b2a5";
-        fg_float = "#f1ecdf";
-        fg_gutter = "#33324e";
-        fg_sidebar = "#b7b2a5";
-        red = "#e0705f";
-        red1 = "#ee8b7a";
-        orange = "#f0955a";
-        yellow = "#ffc247";
-        green = "#9cb56b";
-        green1 = "#b6cc87";
-        green2 = "#7d9552";
-        hint = "#76b7ad";
-        info = "#7d8fd0";
-        magenta = "#d0a3d3";
-        magenta2 = "#bb87c0";
+        accent = "#ffc247"; # accent
+        bg = "#131320"; # canvas
+        bg_dark = "#131320"; # canvas
+        bg_dark1 = "#131320"; # canvas
+        bg_float = "#1a1a26"; # surfaceSubtle
+        bg_highlight = "#232330"; # surfaceRaised
+        bg_popup = "#232330"; # surfaceRaised
+        bg_search = "#322c2c"; # accentContainer
+        bg_sidebar = "#1a1a26"; # surfaceSubtle
+        bg_statusline = "#1a1a26"; # surfaceSubtle
+        bg_visual = "#33324e"; # terminalSelection
+        black = "#1e1e30"; # ansi 0
+        blue = "#7d8fd0"; # ansi 4
+        blue0 = "#3a4060"; # palette 18
+        blue1 = "#98a9e0"; # ansi 12
+        blue2 = "#76b7ad"; # ansi 6
+        blue5 = "#93cfc5"; # ansi 14
+        blue6 = "#c6cec3"; # palette 195
+        blue7 = "#26293f"; # palette 17
+        border = "#34343e"; # strokeSubtle
+        border_highlight = "#ffc247"; # accentBorder
+        comment = "#6f6d70"; # contentTertiary
+        cyan = "#76b7ad"; # ansi 6
+        dark3 = "#484850"; # stroke
+        dark5 = "#8d8a89"; # contentSecondary
+        diff_add = "#252a2d"; # successContainer
+        diff_change = "#222438"; # infoContainer
+        diff_delete = "#2f212b"; # dangerContainer
+        error = "#e0705f"; # danger
+        fg = "#d9d4c8"; # content
+        fg_dark = "#b7b2a5"; # ansi 7
+        fg_float = "#f1ecdf"; # ansi 15
+        fg_gutter = "#484850"; # stroke
+        fg_sidebar = "#b7b2a5"; # ansi 7
+        red = "#e0705f"; # ansi 1
+        red1 = "#ee8b7a"; # ansi 9
+        orange = "#ed9258"; # palette 208
+        yellow = "#ffc247"; # ansi 3
+        yellow1 = "#ffd36e"; # ansi 11
+        green = "#9cb56b"; # ansi 2
+        green1 = "#b6cc87"; # ansi 10
+        green2 = "#7f915c"; # palette 40
+        hint = "#76b7ad"; # ansi 6
+        info = "#7d8fd0"; # info
+        magenta = "#bb87c0"; # ansi 5
+        magenta2 = "#ce7e99"; # palette 199
         none = "NONE";
-        purple = "#bb87c0";
-        teal = "#93cfc5";
-        terminal_black = "#625f72";
-        todo = "#7d8fd0";
-        warning = "#ffc247";
+        purple = "#d0a3d3"; # ansi 13
+        teal = "#93cfc5"; # ansi 14
+        terminal_black = "#625f72"; # ansi 8
+        todo = "#7d8fd0"; # info
+        warning = "#ffc247"; # warning
       };
     };
   };

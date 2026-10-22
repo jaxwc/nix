@@ -11,7 +11,7 @@ local cal = sbar.add("item", "calendar", {
 	},
 
 	label = {
-		color = colors.cyan,
+		color = colors.teal,
 		width = "dynamic",
 
 		padding_left = settings.paddings,

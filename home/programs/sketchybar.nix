@@ -26,17 +26,17 @@
       magenta     = ${ff c.magenta},
       cyan        = ${ff c.cyan},
       purple      = ${ff c.purple},
+      teal        = ${ff c.teal},
       grey        = ${ff c.comment},
+      muted       = ${ff c.dark5},
+      dim         = ${ff c.dark3},
+      accent      = ${ff c.accent},
       transparent = 0x00000000,
       bar = {
         bg     = ${argb "f0" c.bg_dark},
         border = ${ff c.border},
       },
-      popup = {
-        bg     = ${argb "e0" c.bg_float},
-        border = ${ff c.border_highlight},
-      },
-      bg1 = ${ff c.bg_float},
+      bg1 = ${ff c.bg},
       bg2 = ${ff c.bg_highlight},
       with_alpha = function(color, alpha)
         if alpha > 1.0 or alpha < 0.0 then return color end
